@@ -1,0 +1,503 @@
+fileFormatVersion: 2
+guid: 7fb08ba6068054d15addc9a2d60bb411
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4240149481278138484
+    second: Crops_Carrot_Cabbage_4x4_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: carrot_dry
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 898
+        width: 297
+        height: 223
+      alignment: 9
+      pivot: {x: 0.4949, y: 0.6009}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91c4a12cf201e4f059e6115f6c9dc4aa
+      internalID: 121664333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carrot_watered
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 898
+        width: 297
+        height: 223
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.6009}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f3746bb40344fd3a5357bcade81ea5
+      internalID: -2136912239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carrot_sprout
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 898
+        width: 297
+        height: 224
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.5982}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de4ac71b5162340edb7fd5c9e03d9cb7
+      internalID: -1635168877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carrot_young
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 898
+        width: 297
+        height: 232
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.5776}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34e0f8398665e445fb3ef5d31640ceae
+      internalID: -1655126227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carrot_medium
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 600
+        width: 302
+        height: 255
+      alignment: 9
+      pivot: {x: 0.4967, y: 0.5255}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 442bbc97ce563470383991bfd7d4610e
+      internalID: 1419206658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carrot_mature
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 600
+        width: 300
+        height: 282
+      alignment: 9
+      pivot: {x: 0.4967, y: 0.4752}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 726a75a92586a4b62a1e0e93708db360
+      internalID: 1996764492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carrot_ready
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 600
+        width: 300
+        height: 290
+      alignment: 9
+      pivot: {x: 0.4967, y: 0.4621}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 927ff403c061e40bb9d70b0760203d67
+      internalID: 164818496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carrot_harvested
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 600
+        width: 297
+        height: 222
+      alignment: 9
+      pivot: {x: 0.4916, y: 0.6036}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7859dbeb46724439699ec072f212e146
+      internalID: -1137153714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cabbage_dry
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 302
+        width: 301
+        height: 228
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.5943}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deca0b5c863704958b364526f97484bd
+      internalID: -1717499570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cabbage_watered
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 302
+        width: 299
+        height: 228
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5965}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8611aa9b22da04fe5be9342513f60a08
+      internalID: -498556582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cabbage_sprout
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 302
+        width: 299
+        height: 227
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.5969}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 616e0564b5b244ca9a61703a203c5b4d
+      internalID: 1306219402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cabbage_young
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 302
+        width: 300
+        height: 228
+      alignment: 9
+      pivot: {x: 0.4933, y: 0.5943}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d832fd576df5418d96e9cefc517e40a
+      internalID: -1166386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cabbage_medium
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 4
+        width: 298
+        height: 222
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6104}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8df636af61004231abd1f670e290c0c
+      internalID: 1056275892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cabbage_mature
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 4
+        width: 300
+        height: 240
+      alignment: 9
+      pivot: {x: 0.4967, y: 0.5646}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 901ebb4b8e7ef4119be389a34aa072ee
+      internalID: -820492060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cabbage_ready
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 4
+        width: 300
+        height: 241
+      alignment: 9
+      pivot: {x: 0.4967, y: 0.5622}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f7ba391cd21d446e9389bf7db50c7ee
+      internalID: -1741333910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cabbage_harvested
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 4
+        width: 299
+        height: 223
+      alignment: 9
+      pivot: {x: 0.5017, y: 0.6076}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e8268190186b480e8e46f33361ba4e8
+      internalID: -1366559998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: cf4b54b1c7b53440cbe2ff26f6a812e3
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      cabbage_dry: -1717499570
+      cabbage_harvested: -1366559998
+      cabbage_mature: -820492060
+      cabbage_medium: 1056275892
+      cabbage_ready: -1741333910
+      cabbage_sprout: 1306219402
+      cabbage_watered: -498556582
+      cabbage_young: -1166386
+      carrot_dry: 121664333
+      carrot_harvested: -1137153714
+      carrot_mature: 1996764492
+      carrot_medium: 1419206658
+      carrot_ready: 164818496
+      carrot_sprout: -1635168877
+      carrot_watered: -2136912239
+      carrot_young: -1655126227
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

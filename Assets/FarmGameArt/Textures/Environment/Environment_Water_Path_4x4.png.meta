@@ -1,0 +1,503 @@
+fileFormatVersion: 2
+guid: cec262c747bd940269854fd8ec1660d9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 158191040472228600
+    second: Environment_Water_Path_4x4_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: water_deep
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 829
+        width: 300
+        height: 250
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.596}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db670574f77ab465ab7fe13de3a77eb6
+      internalID: 1359330490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_shallow
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 829
+        width: 299
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5944}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84ac48b6e3c254884883b17fce5ee364
+      internalID: 544983230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_reeds
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 829
+        width: 300
+        height: 250
+      alignment: 9
+      pivot: {x: 0.4967, y: 0.596}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93d5aa41ac1cb4f2d9755dcf92a8f5a7
+      internalID: -2010924081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_lilies
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 829
+        width: 302
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5944}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1cb012a136aa4b698d3ed50ef860962
+      internalID: -1431064412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_edge_north
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 554
+        width: 300
+        height: 255
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.6157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86b239f520999429ea8be1d3a2a9187e
+      internalID: 290824278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_edge_south
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 554
+        width: 300
+        height: 255
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.6059}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd01a22410ff749bcbf8f66dfaa6644c
+      internalID: 1165770811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_edge_east
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 554
+        width: 300
+        height: 254
+      alignment: 9
+      pivot: {x: 0.4967, y: 0.6122}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60e4ecab708864c6096e5661eb1bca55
+      internalID: -1809391521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_edge_west
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 554
+        width: 302
+        height: 254
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6122}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f460a58e6b8db468785ae264ceb1989e
+      internalID: -895193390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_corner_nw
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 279
+        width: 301
+        height: 261
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6034}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 297f0941fcf0f40e795835f6e776a08a
+      internalID: -156637824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_corner_ne
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 279
+        width: 298
+        height: 260
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 604e483a8698543d59e98a91fdff5b26
+      internalID: 736502112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_corner_sw
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 279
+        width: 300
+        height: 259
+      alignment: 9
+      pivot: {x: 0.4967, y: 0.6158}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c41aacb73bb04fb1a5c75f450c7d327
+      internalID: 263947175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_corner_se
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 279
+        width: 303
+        height: 258
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6085}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f763d519ff35b4deba939167723d7b91
+      internalID: 1472634988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_bridge_ne_sw
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 4
+        width: 302
+        height: 267
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.6011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3320158c6bf92416eb1d402b750c90ea
+      internalID: -624669920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_bridge_nw_se
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 4
+        width: 301
+        height: 266
+      alignment: 9
+      pivot: {x: 0.4967, y: 0.6109}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d107b00f2d09f4d4095c67eba21c348a
+      internalID: 596689305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_stepping_stones
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 4
+        width: 301
+        height: 265
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.6057}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24c53ce3fb3fa4a0fb6cba70a3332dd5
+      internalID: -1285251012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_fishing_spot
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 4
+        width: 303
+        height: 265
+      alignment: 9
+      pivot: {x: 0.4967, y: 0.6019}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c366693861e8f48e6a8a36ec8be64e0b
+      internalID: -1575278116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c7d336398be794149bf9f723b1be274b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      water_bridge_ne_sw: -624669920
+      water_bridge_nw_se: 596689305
+      water_corner_ne: 736502112
+      water_corner_nw: -156637824
+      water_corner_se: 1472634988
+      water_corner_sw: 263947175
+      water_deep: 1359330490
+      water_edge_east: -1809391521
+      water_edge_north: 290824278
+      water_edge_south: 1165770811
+      water_edge_west: -895193390
+      water_fishing_spot: -1575278116
+      water_lilies: -1431064412
+      water_reeds: -2010924081
+      water_shallow: 544983230
+      water_stepping_stones: -1285251012
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

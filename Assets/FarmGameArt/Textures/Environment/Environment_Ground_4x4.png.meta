@@ -1,0 +1,503 @@
+fileFormatVersion: 2
+guid: a8da40ff32d45440ea9a77338257e952
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7239670397461183585
+    second: Environment_Ground_4x4_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ground_grass_plain
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 805
+        width: 303
+        height: 249
+      alignment: 9
+      pivot: {x: 0.4967, y: 0.6064}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 617356cd4912a4179bc61f7f89c81c54
+      internalID: 636611431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_grass_flowers
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 805
+        width: 298
+        height: 249
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.6004}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 165fda041ade043578a241447687ed87
+      internalID: 817631224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_grass_worn
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 805
+        width: 298
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6165}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ca1923037cc040858dfbf91afe278a2
+      internalID: -1630887307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_grass_autumn
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 805
+        width: 298
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6225}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25f6eb43ac4764371a325b8097a6bdb2
+      internalID: 979769140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_soil_bare
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 538
+        width: 299
+        height: 245
+      alignment: 9
+      pivot: {x: 0.4967, y: 0.5898}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f5785140eb1f441999d53e81d0643f3
+      internalID: 146715515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_soil_tilled_dry
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 538
+        width: 297
+        height: 246
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.5935}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 555849dc6e5d74129bb2fea0b615f11d
+      internalID: -1484919519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_soil_tilled_wet
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 538
+        width: 298
+        height: 245
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.598}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3680081eeca234d1d8321851023eb8a1
+      internalID: 1280714616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_soil_compost
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 538
+        width: 299
+        height: 246
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.5976}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdfb279e9e47d4f6aa5ed6c3b2101149
+      internalID: 1434422611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_stone_straight_ne_sw
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 271
+        width: 301
+        height: 258
+      alignment: 9
+      pivot: {x: 0.4967, y: 0.6008}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9ff268c68c4840a88779f2b778eb9b1
+      internalID: -450502251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_stone_straight_nw_se
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 271
+        width: 298
+        height: 257
+      alignment: 9
+      pivot: {x: 0.4966, y: 0.5934}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64d6cd43181484ae8b87034cf4b8b5be
+      internalID: -1307613328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_stone_corner
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 271
+        width: 298
+        height: 257
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6128}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87f2a114c100457d88167fbe52b5249
+      internalID: -313261692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_stone_t_junction
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 271
+        width: 301
+        height: 257
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5914}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd8f7ecadd9dd49f7b6bdf6a04083677
+      internalID: -1102869369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_dirt_straight
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 4
+        width: 301
+        height: 259
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.6042}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db871fc7ff9a1440893b6bbd37c3ef77
+      internalID: 1662537421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_dirt_corner
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 4
+        width: 297
+        height: 258
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.595}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5293fc0011b5143a38d7086be8a83cb0
+      internalID: -1669952359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_sandy_shore
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 4
+        width: 297
+        height: 258
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.6085}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 089174e9bf77a409ab51b484af01542f
+      internalID: -1508931013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_water_shallow
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 4
+        width: 299
+        height: 257
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6109}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcd7fdf46e23646fe8e26764b5af5de9
+      internalID: 2059565444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f3fb03cb2277e43169ed8dbcdf8946da
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ground_dirt_corner: -1669952359
+      ground_dirt_straight: 1662537421
+      ground_grass_autumn: 979769140
+      ground_grass_flowers: 817631224
+      ground_grass_plain: 636611431
+      ground_grass_worn: -1630887307
+      ground_sandy_shore: -1508931013
+      ground_soil_bare: 146715515
+      ground_soil_compost: 1434422611
+      ground_soil_tilled_dry: -1484919519
+      ground_soil_tilled_wet: 1280714616
+      ground_stone_corner: -313261692
+      ground_stone_straight_ne_sw: -450502251
+      ground_stone_straight_nw_se: -1307613328
+      ground_stone_t_junction: -1102869369
+      ground_water_shallow: 2059565444
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

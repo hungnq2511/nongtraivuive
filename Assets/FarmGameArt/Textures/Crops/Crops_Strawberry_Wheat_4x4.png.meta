@@ -1,0 +1,503 @@
+fileFormatVersion: 2
+guid: ce7c79262e1fa44a78a9dad4a8e01429
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5621581609133072427
+    second: Crops_Strawberry_Wheat_4x4_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: strawberry_dry
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 883
+        width: 296
+        height: 217
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.6083}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1955484bc993d4f7090200a80c6ad994
+      internalID: -780031239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_watered
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 883
+        width: 294
+        height: 216
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d76363c5fcbb45969012bfb6dbe9d16
+      internalID: 1789180944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_sprout
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 883
+        width: 297
+        height: 217
+      alignment: 9
+      pivot: {x: 0.4966, y: 0.6083}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb1efd29c1f104e8fbd26529159e1ea7
+      internalID: -94479118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_young
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 883
+        width: 296
+        height: 217
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.6083}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a23ed91b64eef49b2863e147b14127a6
+      internalID: -1569026171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_medium
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 590
+        width: 296
+        height: 248
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.5323}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f28625433d3740fc9a88ad73737375c
+      internalID: -1903890149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_mature
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 590
+        width: 295
+        height: 261
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5057}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b294fad9e5b8f407093b8febbb73f9ca
+      internalID: -803882894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_ready
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 590
+        width: 297
+        height: 261
+      alignment: 9
+      pivot: {x: 0.4933, y: 0.5057}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ba21d54622c14fe5a5de36c860b0c99
+      internalID: -923446513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_harvested
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 590
+        width: 298
+        height: 219
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.6027}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a33511523db0e4456af0143641bf3d64
+      internalID: 1316957083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wheat_dry
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 297
+        width: 297
+        height: 219
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.605}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9e76967babd54a07b65fee1dda2985f
+      internalID: -403371721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wheat_watered
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 297
+        width: 294
+        height: 218
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.6078}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7abb43456f7148f6ad43974ea7e06ff
+      internalID: 1463494794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wheat_sprout
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 297
+        width: 297
+        height: 220
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.6023}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3bbeeeb17e5d49a8967c4c8de986e1e
+      internalID: 2061022135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wheat_young
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 297
+        width: 298
+        height: 254
+      alignment: 9
+      pivot: {x: 0.4966, y: 0.5217}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6232798500956471093c1d78f61d95bc
+      internalID: 1963172001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wheat_medium
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 4
+        width: 296
+        height: 272
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4908}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90c3f4ac12cac4018867ff86674ff1e7
+      internalID: -618672982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wheat_mature
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 4
+        width: 296
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4684}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25f0aaab720b64ca8a2ea597292bbddd
+      internalID: -841390433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wheat_ready
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 4
+        width: 297
+        height: 284
+      alignment: 9
+      pivot: {x: 0.4949, y: 0.4665}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3735880056c90421e941eb6a10c3bb14
+      internalID: 1444904197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wheat_harvested
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 4
+        width: 296
+        height: 217
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6106}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f312c604fa12a4895bd8f41e4e4a2321
+      internalID: 281695073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b6de8249531a4411aa453092a4b259d3
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      strawberry_dry: -780031239
+      strawberry_harvested: 1316957083
+      strawberry_mature: -803882894
+      strawberry_medium: -1903890149
+      strawberry_ready: -923446513
+      strawberry_sprout: -94479118
+      strawberry_watered: 1789180944
+      strawberry_young: -1569026171
+      wheat_dry: -403371721
+      wheat_harvested: 281695073
+      wheat_mature: -841390433
+      wheat_medium: -618672982
+      wheat_ready: 1444904197
+      wheat_sprout: 2061022135
+      wheat_watered: 1463494794
+      wheat_young: 1963172001
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

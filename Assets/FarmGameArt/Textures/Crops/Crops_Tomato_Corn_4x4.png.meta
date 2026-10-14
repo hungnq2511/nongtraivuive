@@ -1,0 +1,503 @@
+fileFormatVersion: 2
+guid: 4f8ec24c2b8d940089466ee8f350c48f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9085910448446514378
+    second: Crops_Tomato_Corn_4x4_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tomato_dry
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 925
+        width: 293
+        height: 219
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.6073}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 490799008985c4f20a2dca0f4bc0d5cd
+      internalID: -223328536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomato_watered
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 925
+        width: 294
+        height: 218
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6124}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbd6e63cd02154ca3b9a5f2b29663c80
+      internalID: -744401225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomato_sprout
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 925
+        width: 292
+        height: 212
+      alignment: 9
+      pivot: {x: 0.4932, y: 0.6274}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b7f1fb2b09f4b329cb414147f6eaf8
+      internalID: 1044582208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomato_young
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 925
+        width: 295
+        height: 242
+      alignment: 9
+      pivot: {x: 0.4949, y: 0.5496}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e127b4a7dc60495a946dc815e9aa74b
+      internalID: -1271624019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomato_medium
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 618
+        width: 293
+        height: 294
+      alignment: 9
+      pivot: {x: 0.4949, y: 0.4524}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58e654bf1783d4ad5836846430a548bf
+      internalID: 1702614770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomato_mature
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 618
+        width: 294
+        height: 295
+      alignment: 9
+      pivot: {x: 0.4966, y: 0.4508}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71d979fc74c5d403096a31fee9ae468b
+      internalID: -957227806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomato_ready
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 618
+        width: 293
+        height: 299
+      alignment: 9
+      pivot: {x: 0.4949, y: 0.4448}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 378dbd1e6c3864bce83ea8b11b12f2dc
+      internalID: -1385414906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomato_harvested
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 618
+        width: 293
+        height: 219
+      alignment: 9
+      pivot: {x: 0.5017, y: 0.6073}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79035bac5640b43e7a0203036e68614c
+      internalID: 1647215995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: corn_dry
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 311
+        width: 292
+        height: 222
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.6149}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d5246fa20502492bb6e037dcb11662b
+      internalID: -1289961794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: corn_watered
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 311
+        width: 294
+        height: 220
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.6159}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1da3dc20fcde4149be039a899ed5094
+      internalID: -1033537729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: corn_sprout
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 311
+        width: 293
+        height: 212
+      alignment: 9
+      pivot: {x: 0.4932, y: 0.6439}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e921e3554fb644ce9ca48d83e1cef3c
+      internalID: -1484447209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: corn_young
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 311
+        width: 294
+        height: 269
+      alignment: 9
+      pivot: {x: 0.4915, y: 0.5074}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24db5bf65433d484fb916342559728c3
+      internalID: -1398086935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: corn_medium
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 4
+        width: 295
+        height: 284
+      alignment: 9
+      pivot: {x: 0.4966, y: 0.4806}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96b0a441443c64f2fba1042bb1946852
+      internalID: -1255289119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: corn_mature
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 4
+        width: 296
+        height: 285
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.4789}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87e0454cc36fa42da84e89eacd377b00
+      internalID: -1081996006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: corn_ready
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 4
+        width: 292
+        height: 287
+      alignment: 9
+      pivot: {x: 0.4914, y: 0.4756}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35215bcfa5483419fa2ac3f5b65bfa6b
+      internalID: -194051963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: corn_harvested
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 4
+        width: 296
+        height: 218
+      alignment: 9
+      pivot: {x: 0.4949, y: 0.6261}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bab7643b223d410bb051ebd3f59c124
+      internalID: 1971210961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 241bf1845bbd848f4889a7af861e8315
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      corn_dry: -1289961794
+      corn_harvested: 1971210961
+      corn_mature: -1081996006
+      corn_medium: -1255289119
+      corn_ready: -194051963
+      corn_sprout: -1484447209
+      corn_watered: -1033537729
+      corn_young: -1398086935
+      tomato_dry: -223328536
+      tomato_harvested: 1647215995
+      tomato_mature: -957227806
+      tomato_medium: 1702614770
+      tomato_ready: -1385414906
+      tomato_sprout: 1044582208
+      tomato_watered: -744401225
+      tomato_young: -1271624019
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

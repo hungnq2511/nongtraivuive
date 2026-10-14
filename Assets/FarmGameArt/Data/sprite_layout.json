@@ -1,0 +1,3157 @@
+{
+ "pixelsPerUnit": 128,
+ "atlases": [
+  {
+   "path": "Assets/FarmGameArt/Textures/Crops/Crops_Carrot_Cabbage_4x4.png",
+   "category": "crop",
+   "width": 1240,
+   "height": 1192,
+   "sprites": [
+    {
+     "name": "carrot_dry",
+     "x": 6,
+     "y": 898,
+     "w": 297,
+     "h": 223,
+     "pivotX": 0.4949,
+     "pivotY": 0.6009,
+     "halfW": 147.0
+    },
+    {
+     "name": "carrot_watered",
+     "x": 316,
+     "y": 898,
+     "w": 297,
+     "h": 223,
+     "pivotX": 0.4983,
+     "pivotY": 0.6009,
+     "halfW": 147.0
+    },
+    {
+     "name": "carrot_sprout",
+     "x": 626,
+     "y": 898,
+     "w": 297,
+     "h": 224,
+     "pivotX": 0.4983,
+     "pivotY": 0.5982,
+     "halfW": 147.0
+    },
+    {
+     "name": "carrot_young",
+     "x": 936,
+     "y": 898,
+     "w": 297,
+     "h": 232,
+     "pivotX": 0.4983,
+     "pivotY": 0.5776,
+     "halfW": 146.5
+    },
+    {
+     "name": "carrot_medium",
+     "x": 4,
+     "y": 600,
+     "w": 302,
+     "h": 255,
+     "pivotX": 0.4967,
+     "pivotY": 0.5255,
+     "halfW": 149.0
+    },
+    {
+     "name": "carrot_mature",
+     "x": 315,
+     "y": 600,
+     "w": 300,
+     "h": 282,
+     "pivotX": 0.4967,
+     "pivotY": 0.4752,
+     "halfW": 148.5
+    },
+    {
+     "name": "carrot_ready",
+     "x": 625,
+     "y": 600,
+     "w": 300,
+     "h": 290,
+     "pivotX": 0.4967,
+     "pivotY": 0.4621,
+     "halfW": 148.5
+    },
+    {
+     "name": "carrot_harvested",
+     "x": 936,
+     "y": 600,
+     "w": 297,
+     "h": 222,
+     "pivotX": 0.4916,
+     "pivotY": 0.6036,
+     "halfW": 146.5
+    },
+    {
+     "name": "cabbage_dry",
+     "x": 4,
+     "y": 302,
+     "w": 301,
+     "h": 228,
+     "pivotX": 0.4983,
+     "pivotY": 0.5943,
+     "halfW": 149.0
+    },
+    {
+     "name": "cabbage_watered",
+     "x": 315,
+     "y": 302,
+     "w": 299,
+     "h": 228,
+     "pivotX": 0.5,
+     "pivotY": 0.5965,
+     "halfW": 147.5
+    },
+    {
+     "name": "cabbage_sprout",
+     "x": 625,
+     "y": 302,
+     "w": 299,
+     "h": 227,
+     "pivotX": 0.4983,
+     "pivotY": 0.5969,
+     "halfW": 147.5
+    },
+    {
+     "name": "cabbage_young",
+     "x": 935,
+     "y": 302,
+     "w": 300,
+     "h": 228,
+     "pivotX": 0.4933,
+     "pivotY": 0.5943,
+     "halfW": 148.5
+    },
+    {
+     "name": "cabbage_medium",
+     "x": 6,
+     "y": 4,
+     "w": 298,
+     "h": 222,
+     "pivotX": 0.5,
+     "pivotY": 0.6104,
+     "halfW": 147.5
+    },
+    {
+     "name": "cabbage_mature",
+     "x": 315,
+     "y": 4,
+     "w": 300,
+     "h": 240,
+     "pivotX": 0.4967,
+     "pivotY": 0.5646,
+     "halfW": 148.5
+    },
+    {
+     "name": "cabbage_ready",
+     "x": 625,
+     "y": 4,
+     "w": 300,
+     "h": 241,
+     "pivotX": 0.4967,
+     "pivotY": 0.5622,
+     "halfW": 148.0
+    },
+    {
+     "name": "cabbage_harvested",
+     "x": 935,
+     "y": 4,
+     "w": 299,
+     "h": 223,
+     "pivotX": 0.5017,
+     "pivotY": 0.6076,
+     "halfW": 147.5
+    }
+   ]
+  },
+  {
+   "path": "Assets/FarmGameArt/Textures/Crops/Crops_Tomato_Corn_4x4.png",
+   "category": "crop",
+   "width": 1216,
+   "height": 1228,
+   "sprites": [
+    {
+     "name": "tomato_dry",
+     "x": 5,
+     "y": 925,
+     "w": 293,
+     "h": 219,
+     "pivotX": 0.4983,
+     "pivotY": 0.6073,
+     "halfW": 145.0
+    },
+    {
+     "name": "tomato_watered",
+     "x": 309,
+     "y": 925,
+     "w": 294,
+     "h": 218,
+     "pivotX": 0.5,
+     "pivotY": 0.6124,
+     "halfW": 145.0
+    },
+    {
+     "name": "tomato_sprout",
+     "x": 614,
+     "y": 925,
+     "w": 292,
+     "h": 212,
+     "pivotX": 0.4932,
+     "pivotY": 0.6274,
+     "halfW": 144.0
+    },
+    {
+     "name": "tomato_young",
+     "x": 916,
+     "y": 925,
+     "w": 295,
+     "h": 242,
+     "pivotX": 0.4949,
+     "pivotY": 0.5496,
+     "halfW": 145.5
+    },
+    {
+     "name": "tomato_medium",
+     "x": 5,
+     "y": 618,
+     "w": 293,
+     "h": 294,
+     "pivotX": 0.4949,
+     "pivotY": 0.4524,
+     "halfW": 145.0
+    },
+    {
+     "name": "tomato_mature",
+     "x": 309,
+     "y": 618,
+     "w": 294,
+     "h": 295,
+     "pivotX": 0.4966,
+     "pivotY": 0.4508,
+     "halfW": 145.5
+    },
+    {
+     "name": "tomato_ready",
+     "x": 613,
+     "y": 618,
+     "w": 293,
+     "h": 299,
+     "pivotX": 0.4949,
+     "pivotY": 0.4448,
+     "halfW": 145.0
+    },
+    {
+     "name": "tomato_harvested",
+     "x": 917,
+     "y": 618,
+     "w": 293,
+     "h": 219,
+     "pivotX": 0.5017,
+     "pivotY": 0.6073,
+     "halfW": 144.5
+    },
+    {
+     "name": "corn_dry",
+     "x": 6,
+     "y": 311,
+     "w": 292,
+     "h": 222,
+     "pivotX": 0.4983,
+     "pivotY": 0.6149,
+     "halfW": 144.5
+    },
+    {
+     "name": "corn_watered",
+     "x": 309,
+     "y": 311,
+     "w": 294,
+     "h": 220,
+     "pivotX": 0.4983,
+     "pivotY": 0.6159,
+     "halfW": 145.5
+    },
+    {
+     "name": "corn_sprout",
+     "x": 613,
+     "y": 311,
+     "w": 293,
+     "h": 212,
+     "pivotX": 0.4932,
+     "pivotY": 0.6439,
+     "halfW": 145.0
+    },
+    {
+     "name": "corn_young",
+     "x": 917,
+     "y": 311,
+     "w": 294,
+     "h": 269,
+     "pivotX": 0.4915,
+     "pivotY": 0.5074,
+     "halfW": 145.5
+    },
+    {
+     "name": "corn_medium",
+     "x": 4,
+     "y": 4,
+     "w": 295,
+     "h": 284,
+     "pivotX": 0.4966,
+     "pivotY": 0.4806,
+     "halfW": 145.5
+    },
+    {
+     "name": "corn_mature",
+     "x": 308,
+     "y": 4,
+     "w": 296,
+     "h": 285,
+     "pivotX": 0.4983,
+     "pivotY": 0.4789,
+     "halfW": 145.5
+    },
+    {
+     "name": "corn_ready",
+     "x": 614,
+     "y": 4,
+     "w": 292,
+     "h": 287,
+     "pivotX": 0.4914,
+     "pivotY": 0.4756,
+     "halfW": 144.5
+    },
+    {
+     "name": "corn_harvested",
+     "x": 916,
+     "y": 4,
+     "w": 296,
+     "h": 218,
+     "pivotX": 0.4949,
+     "pivotY": 0.6261,
+     "halfW": 145.5
+    }
+   ]
+  },
+  {
+   "path": "Assets/FarmGameArt/Textures/Crops/Crops_Potato_Pumpkin_4x4.png",
+   "category": "crop",
+   "width": 1248,
+   "height": 1200,
+   "sprites": [
+    {
+     "name": "potato_dry",
+     "x": 7,
+     "y": 904,
+     "w": 298,
+     "h": 220,
+     "pivotX": 0.4983,
+     "pivotY": 0.6045,
+     "halfW": 147.5
+    },
+    {
+     "name": "potato_watered",
+     "x": 319,
+     "y": 904,
+     "w": 297,
+     "h": 220,
+     "pivotX": 0.5,
+     "pivotY": 0.6045,
+     "halfW": 146.5
+    },
+    {
+     "name": "potato_sprout",
+     "x": 631,
+     "y": 904,
+     "w": 298,
+     "h": 221,
+     "pivotX": 0.495,
+     "pivotY": 0.6018,
+     "halfW": 147.0
+    },
+    {
+     "name": "potato_young",
+     "x": 943,
+     "y": 904,
+     "w": 298,
+     "h": 224,
+     "pivotX": 0.4983,
+     "pivotY": 0.5938,
+     "halfW": 147.0
+    },
+    {
+     "name": "potato_medium",
+     "x": 6,
+     "y": 604,
+     "w": 300,
+     "h": 279,
+     "pivotX": 0.5017,
+     "pivotY": 0.4767,
+     "halfW": 148.0
+    },
+    {
+     "name": "potato_mature",
+     "x": 319,
+     "y": 604,
+     "w": 298,
+     "h": 289,
+     "pivotX": 0.5017,
+     "pivotY": 0.4602,
+     "halfW": 147.5
+    },
+    {
+     "name": "potato_ready",
+     "x": 629,
+     "y": 604,
+     "w": 301,
+     "h": 292,
+     "pivotX": 0.4967,
+     "pivotY": 0.4555,
+     "halfW": 149.0
+    },
+    {
+     "name": "potato_harvested",
+     "x": 942,
+     "y": 604,
+     "w": 300,
+     "h": 224,
+     "pivotX": 0.4983,
+     "pivotY": 0.5938,
+     "halfW": 148.5
+    },
+    {
+     "name": "pumpkin_dry",
+     "x": 6,
+     "y": 304,
+     "w": 300,
+     "h": 224,
+     "pivotX": 0.5,
+     "pivotY": 0.6004,
+     "halfW": 148.0
+    },
+    {
+     "name": "pumpkin_watered",
+     "x": 318,
+     "y": 304,
+     "w": 300,
+     "h": 222,
+     "pivotX": 0.4983,
+     "pivotY": 0.5991,
+     "halfW": 148.5
+    },
+    {
+     "name": "pumpkin_sprout",
+     "x": 628,
+     "y": 304,
+     "w": 303,
+     "h": 224,
+     "pivotX": 0.4983,
+     "pivotY": 0.6004,
+     "halfW": 149.5
+    },
+    {
+     "name": "pumpkin_young",
+     "x": 942,
+     "y": 304,
+     "w": 299,
+     "h": 223,
+     "pivotX": 0.4983,
+     "pivotY": 0.6031,
+     "halfW": 147.5
+    },
+    {
+     "name": "pumpkin_medium",
+     "x": 5,
+     "y": 4,
+     "w": 301,
+     "h": 246,
+     "pivotX": 0.4983,
+     "pivotY": 0.5467,
+     "halfW": 149.0
+    },
+    {
+     "name": "pumpkin_mature",
+     "x": 318,
+     "y": 4,
+     "w": 300,
+     "h": 239,
+     "pivotX": 0.5,
+     "pivotY": 0.5628,
+     "halfW": 148.5
+    },
+    {
+     "name": "pumpkin_ready",
+     "x": 628,
+     "y": 4,
+     "w": 304,
+     "h": 260,
+     "pivotX": 0.5,
+     "pivotY": 0.5173,
+     "halfW": 150.5
+    },
+    {
+     "name": "pumpkin_harvested",
+     "x": 942,
+     "y": 4,
+     "w": 299,
+     "h": 221,
+     "pivotX": 0.4983,
+     "pivotY": 0.6086,
+     "halfW": 147.5
+    }
+   ]
+  },
+  {
+   "path": "Assets/FarmGameArt/Textures/Crops/Crops_Strawberry_Wheat_4x4.png",
+   "category": "crop",
+   "width": 1224,
+   "height": 1172,
+   "sprites": [
+    {
+     "name": "strawberry_dry",
+     "x": 5,
+     "y": 883,
+     "w": 296,
+     "h": 217,
+     "pivotX": 0.4983,
+     "pivotY": 0.6083,
+     "halfW": 146.5
+    },
+    {
+     "name": "strawberry_watered",
+     "x": 312,
+     "y": 883,
+     "w": 294,
+     "h": 216,
+     "pivotX": 0.5,
+     "pivotY": 0.6111,
+     "halfW": 145.0
+    },
+    {
+     "name": "strawberry_sprout",
+     "x": 616,
+     "y": 883,
+     "w": 297,
+     "h": 217,
+     "pivotX": 0.4966,
+     "pivotY": 0.6083,
+     "halfW": 146.5
+    },
+    {
+     "name": "strawberry_young",
+     "x": 923,
+     "y": 883,
+     "w": 296,
+     "h": 217,
+     "pivotX": 0.4983,
+     "pivotY": 0.6083,
+     "halfW": 146.5
+    },
+    {
+     "name": "strawberry_medium",
+     "x": 5,
+     "y": 590,
+     "w": 296,
+     "h": 248,
+     "pivotX": 0.4983,
+     "pivotY": 0.5323,
+     "halfW": 146.5
+    },
+    {
+     "name": "strawberry_mature",
+     "x": 311,
+     "y": 590,
+     "w": 295,
+     "h": 261,
+     "pivotX": 0.5,
+     "pivotY": 0.5057,
+     "halfW": 145.5
+    },
+    {
+     "name": "strawberry_ready",
+     "x": 616,
+     "y": 590,
+     "w": 297,
+     "h": 261,
+     "pivotX": 0.4933,
+     "pivotY": 0.5057,
+     "halfW": 146.5
+    },
+    {
+     "name": "strawberry_harvested",
+     "x": 922,
+     "y": 590,
+     "w": 298,
+     "h": 219,
+     "pivotX": 0.4983,
+     "pivotY": 0.6027,
+     "halfW": 147.5
+    },
+    {
+     "name": "wheat_dry",
+     "x": 4,
+     "y": 297,
+     "w": 297,
+     "h": 219,
+     "pivotX": 0.4983,
+     "pivotY": 0.605,
+     "halfW": 147.0
+    },
+    {
+     "name": "wheat_watered",
+     "x": 312,
+     "y": 297,
+     "w": 294,
+     "h": 218,
+     "pivotX": 0.4983,
+     "pivotY": 0.6078,
+     "halfW": 145.5
+    },
+    {
+     "name": "wheat_sprout",
+     "x": 616,
+     "y": 297,
+     "w": 297,
+     "h": 220,
+     "pivotX": 0.4983,
+     "pivotY": 0.6023,
+     "halfW": 147.0
+    },
+    {
+     "name": "wheat_young",
+     "x": 922,
+     "y": 297,
+     "w": 298,
+     "h": 254,
+     "pivotX": 0.4966,
+     "pivotY": 0.5217,
+     "halfW": 147.0
+    },
+    {
+     "name": "wheat_medium",
+     "x": 5,
+     "y": 4,
+     "w": 296,
+     "h": 272,
+     "pivotX": 0.5,
+     "pivotY": 0.4908,
+     "halfW": 146.5
+    },
+    {
+     "name": "wheat_mature",
+     "x": 311,
+     "y": 4,
+     "w": 296,
+     "h": 285,
+     "pivotX": 0.5,
+     "pivotY": 0.4684,
+     "halfW": 146.0
+    },
+    {
+     "name": "wheat_ready",
+     "x": 616,
+     "y": 4,
+     "w": 297,
+     "h": 284,
+     "pivotX": 0.4949,
+     "pivotY": 0.4665,
+     "halfW": 147.0
+    },
+    {
+     "name": "wheat_harvested",
+     "x": 923,
+     "y": 4,
+     "w": 296,
+     "h": 217,
+     "pivotX": 0.5,
+     "pivotY": 0.6106,
+     "halfW": 146.5
+    }
+   ]
+  },
+  {
+   "path": "Assets/FarmGameArt/Textures/Crops/Crops_Rice_Watermelon_4x4.png",
+   "category": "crop",
+   "width": 1240,
+   "height": 1216,
+   "sprites": [
+    {
+     "name": "rice_dry",
+     "x": 6,
+     "y": 916,
+     "w": 297,
+     "h": 220,
+     "pivotX": 0.4983,
+     "pivotY": 0.5977,
+     "halfW": 147.0
+    },
+    {
+     "name": "rice_watered",
+     "x": 317,
+     "y": 916,
+     "w": 295,
+     "h": 220,
+     "pivotX": 0.4983,
+     "pivotY": 0.6,
+     "halfW": 146.0
+    },
+    {
+     "name": "rice_sprout",
+     "x": 627,
+     "y": 916,
+     "w": 296,
+     "h": 221,
+     "pivotX": 0.5,
+     "pivotY": 0.595,
+     "halfW": 146.5
+    },
+    {
+     "name": "rice_young",
+     "x": 936,
+     "y": 916,
+     "w": 297,
+     "h": 256,
+     "pivotX": 0.4983,
+     "pivotY": 0.5137,
+     "halfW": 146.0
+    },
+    {
+     "name": "rice_medium",
+     "x": 6,
+     "y": 612,
+     "w": 297,
+     "h": 296,
+     "pivotX": 0.4983,
+     "pivotY": 0.4443,
+     "halfW": 146.5
+    },
+    {
+     "name": "rice_mature",
+     "x": 317,
+     "y": 612,
+     "w": 296,
+     "h": 293,
+     "pivotX": 0.5,
+     "pivotY": 0.4488,
+     "halfW": 146.0
+    },
+    {
+     "name": "rice_ready",
+     "x": 627,
+     "y": 612,
+     "w": 296,
+     "h": 289,
+     "pivotX": 0.4966,
+     "pivotY": 0.455,
+     "halfW": 146.5
+    },
+    {
+     "name": "rice_harvested",
+     "x": 937,
+     "y": 612,
+     "w": 296,
+     "h": 221,
+     "pivotX": 0.5,
+     "pivotY": 0.595,
+     "halfW": 146.0
+    },
+    {
+     "name": "watermelon_dry",
+     "x": 6,
+     "y": 308,
+     "w": 297,
+     "h": 224,
+     "pivotX": 0.4983,
+     "pivotY": 0.5915,
+     "halfW": 147.0
+    },
+    {
+     "name": "watermelon_watered",
+     "x": 316,
+     "y": 308,
+     "w": 298,
+     "h": 224,
+     "pivotX": 0.5,
+     "pivotY": 0.5938,
+     "halfW": 147.0
+    },
+    {
+     "name": "watermelon_sprout",
+     "x": 626,
+     "y": 308,
+     "w": 297,
+     "h": 224,
+     "pivotX": 0.4983,
+     "pivotY": 0.5915,
+     "halfW": 146.5
+    },
+    {
+     "name": "watermelon_young",
+     "x": 937,
+     "y": 308,
+     "w": 296,
+     "h": 223,
+     "pivotX": 0.5,
+     "pivotY": 0.5942,
+     "halfW": 146.5
+    },
+    {
+     "name": "watermelon_medium",
+     "x": 5,
+     "y": 4,
+     "w": 299,
+     "h": 246,
+     "pivotX": 0.4983,
+     "pivotY": 0.5386,
+     "halfW": 148.0
+    },
+    {
+     "name": "watermelon_mature",
+     "x": 315,
+     "y": 4,
+     "w": 299,
+     "h": 243,
+     "pivotX": 0.4983,
+     "pivotY": 0.5453,
+     "halfW": 148.0
+    },
+    {
+     "name": "watermelon_ready",
+     "x": 624,
+     "y": 4,
+     "w": 302,
+     "h": 263,
+     "pivotX": 0.5,
+     "pivotY": 0.5038,
+     "halfW": 149.5
+    },
+    {
+     "name": "watermelon_harvested",
+     "x": 936,
+     "y": 4,
+     "w": 298,
+     "h": 226,
+     "pivotX": 0.5034,
+     "pivotY": 0.5907,
+     "halfW": 147.0
+    }
+   ]
+  },
+  {
+   "path": "Assets/FarmGameArt/Textures/Animals/Animal_Chicken_4x4.png",
+   "category": "object",
+   "width": 1160,
+   "height": 1100,
+   "sprites": [
+    {
+     "name": "chicken_idle_ne",
+     "x": 26,
+     "y": 829,
+     "w": 237,
+     "h": 243,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "chicken_idle_se",
+     "x": 317,
+     "y": 829,
+     "w": 236,
+     "h": 247,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "chicken_idle_sw",
+     "x": 607,
+     "y": 829,
+     "w": 235,
+     "h": 245,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "chicken_idle_nw",
+     "x": 902,
+     "y": 829,
+     "w": 226,
+     "h": 247,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "chicken_walk_a_ne",
+     "x": 23,
+     "y": 554,
+     "w": 243,
+     "h": 245,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "chicken_walk_a_se",
+     "x": 318,
+     "y": 554,
+     "w": 233,
+     "h": 248,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "chicken_walk_a_sw",
+     "x": 607,
+     "y": 554,
+     "w": 236,
+     "h": 248,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "chicken_walk_a_nw",
+     "x": 897,
+     "y": 554,
+     "w": 235,
+     "h": 245,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "chicken_walk_b_ne",
+     "x": 28,
+     "y": 279,
+     "w": 234,
+     "h": 253,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "chicken_walk_b_se",
+     "x": 316,
+     "y": 279,
+     "w": 237,
+     "h": 248,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "chicken_walk_b_sw",
+     "x": 606,
+     "y": 279,
+     "w": 237,
+     "h": 250,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "chicken_walk_b_nw",
+     "x": 898,
+     "y": 279,
+     "w": 233,
+     "h": 257,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "chicken_sleep",
+     "x": 21,
+     "y": 4,
+     "w": 247,
+     "h": 234,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "chicken_eat",
+     "x": 302,
+     "y": 4,
+     "w": 266,
+     "h": 254,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "chicken_happy",
+     "x": 598,
+     "y": 4,
+     "w": 254,
+     "h": 258,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "chicken_product_ready",
+     "x": 874,
+     "y": 4,
+     "w": 282,
+     "h": 267,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    }
+   ]
+  },
+  {
+   "path": "Assets/FarmGameArt/Textures/Animals/Animal_Cow_4x4.png",
+   "category": "object",
+   "width": 1244,
+   "height": 1188,
+   "sprites": [
+    {
+     "name": "cow_idle_ne",
+     "x": 12,
+     "y": 895,
+     "w": 286,
+     "h": 277,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "cow_idle_se",
+     "x": 341,
+     "y": 895,
+     "w": 250,
+     "h": 272,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "cow_idle_sw",
+     "x": 644,
+     "y": 895,
+     "w": 266,
+     "h": 286,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "cow_idle_nw",
+     "x": 962,
+     "y": 895,
+     "w": 253,
+     "h": 286,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "cow_walk_a_ne",
+     "x": 11,
+     "y": 598,
+     "w": 288,
+     "h": 281,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "cow_walk_a_se",
+     "x": 341,
+     "y": 598,
+     "w": 250,
+     "h": 265,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "cow_walk_a_sw",
+     "x": 641,
+     "y": 598,
+     "w": 272,
+     "h": 289,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "cow_walk_a_nw",
+     "x": 963,
+     "y": 598,
+     "w": 250,
+     "h": 280,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "cow_walk_b_ne",
+     "x": 12,
+     "y": 301,
+     "w": 287,
+     "h": 266,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "cow_walk_b_se",
+     "x": 340,
+     "y": 301,
+     "w": 252,
+     "h": 271,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "cow_walk_b_sw",
+     "x": 639,
+     "y": 301,
+     "w": 276,
+     "h": 279,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "cow_walk_b_nw",
+     "x": 964,
+     "y": 301,
+     "w": 249,
+     "h": 282,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "cow_sleep",
+     "x": 13,
+     "y": 4,
+     "w": 284,
+     "h": 165,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "cow_eat",
+     "x": 321,
+     "y": 4,
+     "w": 291,
+     "h": 260,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "cow_happy",
+     "x": 661,
+     "y": 4,
+     "w": 232,
+     "h": 278,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "cow_product_ready",
+     "x": 937,
+     "y": 4,
+     "w": 303,
+     "h": 283,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    }
+   ]
+  },
+  {
+   "path": "Assets/FarmGameArt/Textures/Animals/Animal_Pig_4x4.png",
+   "category": "object",
+   "width": 1120,
+   "height": 1108,
+   "sprites": [
+    {
+     "name": "pig_idle_ne",
+     "x": 19,
+     "y": 835,
+     "w": 242,
+     "h": 251,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "pig_idle_se",
+     "x": 306,
+     "y": 835,
+     "w": 227,
+     "h": 245,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "pig_idle_sw",
+     "x": 583,
+     "y": 835,
+     "w": 234,
+     "h": 269,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "pig_idle_nw",
+     "x": 884,
+     "y": 835,
+     "w": 191,
+     "h": 261,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "pig_walk_a_ne",
+     "x": 22,
+     "y": 558,
+     "w": 236,
+     "h": 254,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "pig_walk_a_se",
+     "x": 304,
+     "y": 558,
+     "w": 232,
+     "h": 247,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "pig_walk_a_sw",
+     "x": 578,
+     "y": 558,
+     "w": 244,
+     "h": 261,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "pig_walk_a_nw",
+     "x": 868,
+     "y": 558,
+     "w": 223,
+     "h": 262,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "pig_walk_b_ne",
+     "x": 18,
+     "y": 281,
+     "w": 243,
+     "h": 253,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "pig_walk_b_se",
+     "x": 304,
+     "y": 281,
+     "w": 231,
+     "h": 244,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "pig_walk_b_sw",
+     "x": 579,
+     "y": 281,
+     "w": 242,
+     "h": 261,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "pig_walk_b_nw",
+     "x": 868,
+     "y": 281,
+     "w": 224,
+     "h": 254,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "pig_sleep",
+     "x": 4,
+     "y": 4,
+     "w": 272,
+     "h": 174,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "pig_eat",
+     "x": 295,
+     "y": 4,
+     "w": 250,
+     "h": 213,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "pig_happy",
+     "x": 587,
+     "y": 4,
+     "w": 225,
+     "h": 259,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "pig_product_ready",
+     "x": 847,
+     "y": 4,
+     "w": 265,
+     "h": 258,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    }
+   ]
+  },
+  {
+   "path": "Assets/FarmGameArt/Textures/Animals/Animal_Sheep_4x4.png",
+   "category": "object",
+   "width": 1072,
+   "height": 1112,
+   "sprites": [
+    {
+     "name": "sheep_idle_ne",
+     "x": 25,
+     "y": 838,
+     "w": 218,
+     "h": 234,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "sheep_idle_se",
+     "x": 293,
+     "y": 838,
+     "w": 217,
+     "h": 236,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "sheep_idle_sw",
+     "x": 556,
+     "y": 838,
+     "w": 228,
+     "h": 237,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "sheep_idle_nw",
+     "x": 838,
+     "y": 838,
+     "w": 199,
+     "h": 248,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "sheep_walk_a_ne",
+     "x": 27,
+     "y": 560,
+     "w": 213,
+     "h": 218,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "sheep_walk_a_se",
+     "x": 292,
+     "y": 560,
+     "w": 220,
+     "h": 230,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "sheep_walk_a_sw",
+     "x": 558,
+     "y": 560,
+     "w": 224,
+     "h": 237,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "sheep_walk_a_nw",
+     "x": 846,
+     "y": 560,
+     "w": 183,
+     "h": 253,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "sheep_walk_b_ne",
+     "x": 21,
+     "y": 282,
+     "w": 225,
+     "h": 231,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "sheep_walk_b_se",
+     "x": 287,
+     "y": 282,
+     "w": 230,
+     "h": 224,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "sheep_walk_b_sw",
+     "x": 556,
+     "y": 282,
+     "w": 227,
+     "h": 243,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "sheep_walk_b_nw",
+     "x": 837,
+     "y": 282,
+     "w": 202,
+     "h": 262,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "sheep_sleep",
+     "x": 4,
+     "y": 4,
+     "w": 259,
+     "h": 228,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "sheep_eat",
+     "x": 272,
+     "y": 4,
+     "w": 260,
+     "h": 221,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "sheep_happy",
+     "x": 554,
+     "y": 4,
+     "w": 232,
+     "h": 270,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "sheep_product_ready",
+     "x": 816,
+     "y": 4,
+     "w": 244,
+     "h": 260,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    }
+   ]
+  },
+  {
+   "path": "Assets/FarmGameArt/Textures/Animals/Animal_Goat_4x4.png",
+   "category": "object",
+   "width": 1080,
+   "height": 1232,
+   "sprites": [
+    {
+     "name": "goat_idle_ne",
+     "x": 32,
+     "y": 928,
+     "w": 205,
+     "h": 277,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "goat_idle_se",
+     "x": 301,
+     "y": 928,
+     "w": 207,
+     "h": 277,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "goat_idle_sw",
+     "x": 571,
+     "y": 928,
+     "w": 208,
+     "h": 294,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "goat_idle_nw",
+     "x": 851,
+     "y": 928,
+     "w": 188,
+     "h": 286,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "goat_walk_a_ne",
+     "x": 33,
+     "y": 620,
+     "w": 204,
+     "h": 278,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "goat_walk_a_se",
+     "x": 297,
+     "y": 620,
+     "w": 215,
+     "h": 285,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "goat_walk_a_sw",
+     "x": 571,
+     "y": 620,
+     "w": 207,
+     "h": 291,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "goat_walk_a_nw",
+     "x": 851,
+     "y": 620,
+     "w": 188,
+     "h": 286,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "goat_walk_b_ne",
+     "x": 32,
+     "y": 312,
+     "w": 206,
+     "h": 281,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "goat_walk_b_se",
+     "x": 298,
+     "y": 312,
+     "w": 213,
+     "h": 284,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "goat_walk_b_sw",
+     "x": 574,
+     "y": 312,
+     "w": 202,
+     "h": 285,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "goat_walk_b_nw",
+     "x": 850,
+     "y": 312,
+     "w": 189,
+     "h": 282,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "goat_sleep",
+     "x": 5,
+     "y": 4,
+     "w": 260,
+     "h": 176,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "goat_eat",
+     "x": 274,
+     "y": 4,
+     "w": 262,
+     "h": 230,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "goat_happy",
+     "x": 551,
+     "y": 4,
+     "w": 248,
+     "h": 300,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "goat_product_ready",
+     "x": 820,
+     "y": 4,
+     "w": 250,
+     "h": 262,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    }
+   ]
+  },
+  {
+   "path": "Assets/FarmGameArt/Textures/Animals/Animal_Duck_4x4.png",
+   "category": "object",
+   "width": 1116,
+   "height": 1176,
+   "sprites": [
+    {
+     "name": "duck_idle_ne",
+     "x": 26,
+     "y": 886,
+     "w": 226,
+     "h": 264,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "duck_idle_se",
+     "x": 311,
+     "y": 886,
+     "w": 215,
+     "h": 271,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "duck_idle_sw",
+     "x": 588,
+     "y": 886,
+     "w": 219,
+     "h": 254,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "duck_idle_nw",
+     "x": 874,
+     "y": 886,
+     "w": 204,
+     "h": 257,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "duck_walk_a_ne",
+     "x": 30,
+     "y": 592,
+     "w": 218,
+     "h": 260,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "duck_walk_a_se",
+     "x": 316,
+     "y": 592,
+     "w": 205,
+     "h": 256,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "duck_walk_a_sw",
+     "x": 588,
+     "y": 592,
+     "w": 218,
+     "h": 261,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "duck_walk_a_nw",
+     "x": 874,
+     "y": 592,
+     "w": 205,
+     "h": 268,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "duck_walk_b_ne",
+     "x": 27,
+     "y": 298,
+     "w": 224,
+     "h": 264,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "duck_walk_b_se",
+     "x": 318,
+     "y": 298,
+     "w": 201,
+     "h": 261,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "duck_walk_b_sw",
+     "x": 585,
+     "y": 298,
+     "w": 224,
+     "h": 253,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "duck_walk_b_nw",
+     "x": 867,
+     "y": 298,
+     "w": 219,
+     "h": 257,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "duck_sleep",
+     "x": 7,
+     "y": 4,
+     "w": 265,
+     "h": 241,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "duck_eat",
+     "x": 291,
+     "y": 4,
+     "w": 254,
+     "h": 237,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "duck_happy",
+     "x": 567,
+     "y": 4,
+     "w": 260,
+     "h": 286,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "duck_product_ready",
+     "x": 841,
+     "y": 4,
+     "w": 271,
+     "h": 266,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    }
+   ]
+  },
+  {
+   "path": "Assets/FarmGameArt/Textures/Environment/Environment_Ground_4x4.png",
+   "category": "tile",
+   "width": 1244,
+   "height": 1068,
+   "sprites": [
+    {
+     "name": "ground_grass_plain",
+     "x": 4,
+     "y": 805,
+     "w": 303,
+     "h": 249,
+     "pivotX": 0.4967,
+     "pivotY": 0.6064,
+     "halfW": 149.5
+    },
+    {
+     "name": "ground_grass_flowers",
+     "x": 317,
+     "y": 805,
+     "w": 298,
+     "h": 249,
+     "pivotX": 0.4983,
+     "pivotY": 0.6004,
+     "halfW": 147.5
+    },
+    {
+     "name": "ground_grass_worn",
+     "x": 628,
+     "y": 805,
+     "w": 298,
+     "h": 249,
+     "pivotX": 0.5,
+     "pivotY": 0.6165,
+     "halfW": 147.0
+    },
+    {
+     "name": "ground_grass_autumn",
+     "x": 939,
+     "y": 805,
+     "w": 298,
+     "h": 249,
+     "pivotX": 0.5,
+     "pivotY": 0.6225,
+     "halfW": 147.0
+    },
+    {
+     "name": "ground_soil_bare",
+     "x": 6,
+     "y": 538,
+     "w": 299,
+     "h": 245,
+     "pivotX": 0.4967,
+     "pivotY": 0.5898,
+     "halfW": 147.5
+    },
+    {
+     "name": "ground_soil_tilled_dry",
+     "x": 318,
+     "y": 538,
+     "w": 297,
+     "h": 246,
+     "pivotX": 0.4983,
+     "pivotY": 0.5935,
+     "halfW": 147.0
+    },
+    {
+     "name": "ground_soil_tilled_wet",
+     "x": 628,
+     "y": 538,
+     "w": 298,
+     "h": 245,
+     "pivotX": 0.4983,
+     "pivotY": 0.598,
+     "halfW": 147.5
+    },
+    {
+     "name": "ground_soil_compost",
+     "x": 939,
+     "y": 538,
+     "w": 299,
+     "h": 246,
+     "pivotX": 0.4983,
+     "pivotY": 0.5976,
+     "halfW": 148.0
+    },
+    {
+     "name": "ground_stone_straight_ne_sw",
+     "x": 5,
+     "y": 271,
+     "w": 301,
+     "h": 258,
+     "pivotX": 0.4967,
+     "pivotY": 0.6008,
+     "halfW": 148.5
+    },
+    {
+     "name": "ground_stone_straight_nw_se",
+     "x": 317,
+     "y": 271,
+     "w": 298,
+     "h": 257,
+     "pivotX": 0.4966,
+     "pivotY": 0.5934,
+     "halfW": 147.0
+    },
+    {
+     "name": "ground_stone_corner",
+     "x": 628,
+     "y": 271,
+     "w": 298,
+     "h": 257,
+     "pivotX": 0.5,
+     "pivotY": 0.6128,
+     "halfW": 147.0
+    },
+    {
+     "name": "ground_stone_t_junction",
+     "x": 938,
+     "y": 271,
+     "w": 301,
+     "h": 257,
+     "pivotX": 0.5,
+     "pivotY": 0.5914,
+     "halfW": 148.5
+    },
+    {
+     "name": "ground_dirt_straight",
+     "x": 5,
+     "y": 4,
+     "w": 301,
+     "h": 259,
+     "pivotX": 0.4983,
+     "pivotY": 0.6042,
+     "halfW": 149.0
+    },
+    {
+     "name": "ground_dirt_corner",
+     "x": 318,
+     "y": 4,
+     "w": 297,
+     "h": 258,
+     "pivotX": 0.4983,
+     "pivotY": 0.595,
+     "halfW": 147.0
+    },
+    {
+     "name": "ground_sandy_shore",
+     "x": 629,
+     "y": 4,
+     "w": 297,
+     "h": 258,
+     "pivotX": 0.4983,
+     "pivotY": 0.6085,
+     "halfW": 147.0
+    },
+    {
+     "name": "ground_water_shallow",
+     "x": 939,
+     "y": 4,
+     "w": 299,
+     "h": 257,
+     "pivotX": 0.5,
+     "pivotY": 0.6109,
+     "halfW": 147.5
+    }
+   ]
+  },
+  {
+   "path": "Assets/FarmGameArt/Textures/Environment/Environment_Water_Path_4x4.png",
+   "category": "tile",
+   "width": 1244,
+   "height": 1100,
+   "sprites": [
+    {
+     "name": "water_deep",
+     "x": 5,
+     "y": 829,
+     "w": 300,
+     "h": 250,
+     "pivotX": 0.4983,
+     "pivotY": 0.596,
+     "halfW": 148.5
+    },
+    {
+     "name": "water_shallow",
+     "x": 317,
+     "y": 829,
+     "w": 299,
+     "h": 249,
+     "pivotX": 0.5,
+     "pivotY": 0.5944,
+     "halfW": 147.5
+    },
+    {
+     "name": "water_reeds",
+     "x": 627,
+     "y": 829,
+     "w": 300,
+     "h": 250,
+     "pivotX": 0.4967,
+     "pivotY": 0.596,
+     "halfW": 148.0
+    },
+    {
+     "name": "water_lilies",
+     "x": 937,
+     "y": 829,
+     "w": 302,
+     "h": 249,
+     "pivotX": 0.5,
+     "pivotY": 0.5944,
+     "halfW": 149.0
+    },
+    {
+     "name": "water_edge_north",
+     "x": 5,
+     "y": 554,
+     "w": 300,
+     "h": 255,
+     "pivotX": 0.4983,
+     "pivotY": 0.6157,
+     "halfW": 148.5
+    },
+    {
+     "name": "water_edge_south",
+     "x": 316,
+     "y": 554,
+     "w": 300,
+     "h": 255,
+     "pivotX": 0.4983,
+     "pivotY": 0.6059,
+     "halfW": 147.5
+    },
+    {
+     "name": "water_edge_east",
+     "x": 627,
+     "y": 554,
+     "w": 300,
+     "h": 254,
+     "pivotX": 0.4967,
+     "pivotY": 0.6122,
+     "halfW": 148.0
+    },
+    {
+     "name": "water_edge_west",
+     "x": 937,
+     "y": 554,
+     "w": 302,
+     "h": 254,
+     "pivotX": 0.5,
+     "pivotY": 0.6122,
+     "halfW": 149.0
+    },
+    {
+     "name": "water_corner_nw",
+     "x": 5,
+     "y": 279,
+     "w": 301,
+     "h": 261,
+     "pivotX": 0.5,
+     "pivotY": 0.6034,
+     "halfW": 148.5
+    },
+    {
+     "name": "water_corner_ne",
+     "x": 317,
+     "y": 279,
+     "w": 298,
+     "h": 260,
+     "pivotX": 0.4983,
+     "pivotY": 0.6,
+     "halfW": 147.5
+    },
+    {
+     "name": "water_corner_sw",
+     "x": 627,
+     "y": 279,
+     "w": 300,
+     "h": 259,
+     "pivotX": 0.4967,
+     "pivotY": 0.6158,
+     "halfW": 148.0
+    },
+    {
+     "name": "water_corner_se",
+     "x": 937,
+     "y": 279,
+     "w": 303,
+     "h": 258,
+     "pivotX": 0.5,
+     "pivotY": 0.6085,
+     "halfW": 149.5
+    },
+    {
+     "name": "water_bridge_ne_sw",
+     "x": 4,
+     "y": 4,
+     "w": 302,
+     "h": 267,
+     "pivotX": 0.4983,
+     "pivotY": 0.6011,
+     "halfW": 148.5
+    },
+    {
+     "name": "water_bridge_nw_se",
+     "x": 316,
+     "y": 4,
+     "w": 301,
+     "h": 266,
+     "pivotX": 0.4967,
+     "pivotY": 0.6109,
+     "halfW": 147.5
+    },
+    {
+     "name": "water_stepping_stones",
+     "x": 627,
+     "y": 4,
+     "w": 301,
+     "h": 265,
+     "pivotX": 0.4983,
+     "pivotY": 0.6057,
+     "halfW": 148.0
+    },
+    {
+     "name": "water_fishing_spot",
+     "x": 937,
+     "y": 4,
+     "w": 303,
+     "h": 265,
+     "pivotX": 0.4967,
+     "pivotY": 0.6019,
+     "halfW": 149.5
+    }
+   ]
+  },
+  {
+   "path": "Assets/FarmGameArt/Textures/Environment/Environment_Buildings_4x4.png",
+   "category": "building",
+   "width": 1328,
+   "height": 1248,
+   "sprites": [
+    {
+     "name": "building_farmhouse",
+     "x": 16,
+     "y": 940,
+     "w": 299,
+     "h": 285,
+     "pivotX": 0.5,
+     "pivotY": 0.14
+    },
+    {
+     "name": "building_barn",
+     "x": 336,
+     "y": 940,
+     "w": 324,
+     "h": 272,
+     "pivotX": 0.5,
+     "pivotY": 0.14
+    },
+    {
+     "name": "building_chicken_coop",
+     "x": 687,
+     "y": 940,
+     "w": 285,
+     "h": 240,
+     "pivotX": 0.5,
+     "pivotY": 0.14
+    },
+    {
+     "name": "building_animal_stable",
+     "x": 1014,
+     "y": 940,
+     "w": 296,
+     "h": 284,
+     "pivotX": 0.5,
+     "pivotY": 0.14
+    },
+    {
+     "name": "building_silo",
+     "x": 32,
+     "y": 628,
+     "w": 268,
+     "h": 304,
+     "pivotX": 0.5,
+     "pivotY": 0.14
+    },
+    {
+     "name": "building_greenhouse",
+     "x": 342,
+     "y": 628,
+     "w": 312,
+     "h": 275,
+     "pivotX": 0.5,
+     "pivotY": 0.14
+    },
+    {
+     "name": "building_tool_shed",
+     "x": 686,
+     "y": 628,
+     "w": 288,
+     "h": 275,
+     "pivotX": 0.5,
+     "pivotY": 0.14
+    },
+    {
+     "name": "building_market_stall",
+     "x": 1013,
+     "y": 628,
+     "w": 297,
+     "h": 272,
+     "pivotX": 0.5,
+     "pivotY": 0.14
+    },
+    {
+     "name": "building_shipping_bin",
+     "x": 12,
+     "y": 316,
+     "w": 308,
+     "h": 227,
+     "pivotX": 0.5,
+     "pivotY": 0.14
+    },
+    {
+     "name": "building_windmill",
+     "x": 360,
+     "y": 316,
+     "w": 276,
+     "h": 290,
+     "pivotX": 0.5,
+     "pivotY": 0.14
+    },
+    {
+     "name": "building_stone_well",
+     "x": 708,
+     "y": 316,
+     "w": 244,
+     "h": 267,
+     "pivotX": 0.5,
+     "pivotY": 0.14
+    },
+    {
+     "name": "building_workshop",
+     "x": 1006,
+     "y": 316,
+     "w": 311,
+     "h": 263,
+     "pivotX": 0.5,
+     "pivotY": 0.14
+    },
+    {
+     "name": "building_feed_shed",
+     "x": 19,
+     "y": 4,
+     "w": 294,
+     "h": 277,
+     "pivotX": 0.5,
+     "pivotY": 0.14
+    },
+    {
+     "name": "building_dairy_shed",
+     "x": 348,
+     "y": 4,
+     "w": 300,
+     "h": 263,
+     "pivotX": 0.5,
+     "pivotY": 0.14
+    },
+    {
+     "name": "building_farm_shop",
+     "x": 683,
+     "y": 4,
+     "w": 294,
+     "h": 278,
+     "pivotX": 0.5,
+     "pivotY": 0.14
+    },
+    {
+     "name": "building_farm_gate",
+     "x": 1009,
+     "y": 4,
+     "w": 305,
+     "h": 283,
+     "pivotX": 0.5,
+     "pivotY": 0.14
+    }
+   ]
+  },
+  {
+   "path": "Assets/FarmGameArt/Textures/Environment/Environment_Tools_Props_4x4.png",
+   "category": "object",
+   "width": 1244,
+   "height": 1236,
+   "sprites": [
+    {
+     "name": "tool_hoe",
+     "x": 24,
+     "y": 931,
+     "w": 262,
+     "h": 275,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "tool_watering_can",
+     "x": 333,
+     "y": 931,
+     "w": 266,
+     "h": 247,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "tool_axe",
+     "x": 648,
+     "y": 931,
+     "w": 259,
+     "h": 272,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "tool_pickaxe",
+     "x": 967,
+     "y": 931,
+     "w": 242,
+     "h": 273,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "tool_sickle",
+     "x": 41,
+     "y": 622,
+     "w": 229,
+     "h": 255,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "prop_seed_sack",
+     "x": 330,
+     "y": 622,
+     "w": 273,
+     "h": 248,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "prop_fertilizer_sack",
+     "x": 635,
+     "y": 622,
+     "w": 284,
+     "h": 248,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "prop_harvest_crate",
+     "x": 946,
+     "y": 622,
+     "w": 284,
+     "h": 246,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "prop_harvest_basket",
+     "x": 16,
+     "y": 313,
+     "w": 278,
+     "h": 248,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "prop_milk_pail",
+     "x": 336,
+     "y": 313,
+     "w": 260,
+     "h": 262,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "prop_egg_basket",
+     "x": 640,
+     "y": 313,
+     "w": 275,
+     "h": 247,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "prop_feed_trough",
+     "x": 945,
+     "y": 313,
+     "w": 286,
+     "h": 226,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "prop_sprinkler",
+     "x": 24,
+     "y": 4,
+     "w": 263,
+     "h": 267,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "prop_compost_bin",
+     "x": 315,
+     "y": 4,
+     "w": 303,
+     "h": 284,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "prop_scarecrow",
+     "x": 647,
+     "y": 4,
+     "w": 261,
+     "h": 301,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "prop_order_board",
+     "x": 965,
+     "y": 4,
+     "w": 247,
+     "h": 287,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    }
+   ]
+  },
+  {
+   "path": "Assets/FarmGameArt/Textures/Environment/Environment_Nature_Decor_4x4.png",
+   "category": "object",
+   "width": 1288,
+   "height": 1316,
+   "sprites": [
+    {
+     "name": "nature_oak_tree",
+     "x": 26,
+     "y": 991,
+     "w": 270,
+     "h": 313,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "nature_apple_tree",
+     "x": 346,
+     "y": 991,
+     "w": 274,
+     "h": 313,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "nature_pine_tree",
+     "x": 679,
+     "y": 991,
+     "w": 252,
+     "h": 321,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "nature_bush",
+     "x": 994,
+     "y": 991,
+     "w": 265,
+     "h": 244,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "nature_berry_bush",
+     "x": 23,
+     "y": 662,
+     "w": 275,
+     "h": 249,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "nature_rock_small",
+     "x": 375,
+     "y": 662,
+     "w": 215,
+     "h": 154,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "nature_rock_large",
+     "x": 660,
+     "y": 662,
+     "w": 289,
+     "h": 258,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "nature_tree_stump",
+     "x": 1000,
+     "y": 662,
+     "w": 253,
+     "h": 203,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "nature_fallen_log",
+     "x": 18,
+     "y": 333,
+     "w": 285,
+     "h": 215,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "nature_flower_patch",
+     "x": 347,
+     "y": 333,
+     "w": 271,
+     "h": 242,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "nature_mushrooms",
+     "x": 679,
+     "y": 333,
+     "w": 252,
+     "h": 210,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "nature_hay_bale",
+     "x": 990,
+     "y": 333,
+     "w": 273,
+     "h": 212,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "decor_bench",
+     "x": 4,
+     "y": 4,
+     "w": 314,
+     "h": 266,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "decor_lamp_post",
+     "x": 389,
+     "y": 4,
+     "w": 187,
+     "h": 310,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "decor_wooden_sign",
+     "x": 711,
+     "y": 4,
+     "w": 187,
+     "h": 292,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "decor_flower_arch",
+     "x": 984,
+     "y": 4,
+     "w": 285,
+     "h": 309,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    }
+   ]
+  },
+  {
+   "path": "Assets/FarmGameArt/Textures/Environment/Environment_Fences_4x4.png",
+   "category": "object",
+   "width": 1148,
+   "height": 1068,
+   "sprites": [
+    {
+     "name": "fence_wood_straight_ne_sw",
+     "x": 25,
+     "y": 805,
+     "w": 236,
+     "h": 239,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "fence_wood_straight_nw_se",
+     "x": 322,
+     "y": 805,
+     "w": 216,
+     "h": 234,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "fence_wood_corner_north",
+     "x": 610,
+     "y": 805,
+     "w": 215,
+     "h": 202,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "fence_wood_corner_south",
+     "x": 891,
+     "y": 805,
+     "w": 227,
+     "h": 197,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "fence_wood_t_junction",
+     "x": 21,
+     "y": 538,
+     "w": 244,
+     "h": 231,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "fence_wood_cross",
+     "x": 311,
+     "y": 538,
+     "w": 238,
+     "h": 228,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "fence_wood_end_ne",
+     "x": 611,
+     "y": 538,
+     "w": 213,
+     "h": 216,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "fence_wood_end_nw",
+     "x": 899,
+     "y": 538,
+     "w": 210,
+     "h": 219,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "gate_wood_closed_ne_sw",
+     "x": 9,
+     "y": 271,
+     "w": 269,
+     "h": 234,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "gate_wood_open_ne_sw",
+     "x": 302,
+     "y": 271,
+     "w": 257,
+     "h": 247,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "gate_wood_closed_nw_se",
+     "x": 591,
+     "y": 271,
+     "w": 252,
+     "h": 232,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "gate_wood_open_nw_se",
+     "x": 875,
+     "y": 271,
+     "w": 259,
+     "h": 240,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "wall_stone_straight_ne_sw",
+     "x": 10,
+     "y": 4,
+     "w": 267,
+     "h": 259,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "wall_stone_straight_nw_se",
+     "x": 304,
+     "y": 4,
+     "w": 252,
+     "h": 253,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "wall_stone_corner",
+     "x": 583,
+     "y": 4,
+     "w": 269,
+     "h": 218,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "fence_hedge_straight",
+     "x": 865,
+     "y": 4,
+     "w": 279,
+     "h": 249,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    }
+   ]
+  },
+  {
+   "path": "Assets/FarmGameArt/Textures/Characters/Character_Farmer_4x4.png",
+   "category": "object",
+   "width": 1268,
+   "height": 1252,
+   "sprites": [
+    {
+     "name": "farmer_idle_ne",
+     "x": 60,
+     "y": 943,
+     "w": 197,
+     "h": 281,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "farmer_idle_se",
+     "x": 377,
+     "y": 943,
+     "w": 197,
+     "h": 281,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "farmer_idle_sw",
+     "x": 696,
+     "y": 943,
+     "w": 193,
+     "h": 278,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "farmer_idle_nw",
+     "x": 1019,
+     "y": 943,
+     "w": 180,
+     "h": 278,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "farmer_walk_a_ne",
+     "x": 58,
+     "y": 630,
+     "w": 201,
+     "h": 280,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "farmer_walk_a_se",
+     "x": 374,
+     "y": 630,
+     "w": 202,
+     "h": 282,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "farmer_walk_a_sw",
+     "x": 693,
+     "y": 630,
+     "w": 198,
+     "h": 278,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "farmer_walk_a_nw",
+     "x": 1017,
+     "y": 630,
+     "w": 185,
+     "h": 280,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "farmer_walk_b_ne",
+     "x": 56,
+     "y": 317,
+     "w": 204,
+     "h": 280,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "farmer_walk_b_se",
+     "x": 371,
+     "y": 317,
+     "w": 209,
+     "h": 276,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "farmer_walk_b_sw",
+     "x": 690,
+     "y": 317,
+     "w": 205,
+     "h": 280,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "farmer_walk_b_nw",
+     "x": 1016,
+     "y": 317,
+     "w": 186,
+     "h": 275,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "farmer_hoe_se",
+     "x": 35,
+     "y": 4,
+     "w": 247,
+     "h": 290,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "farmer_water_se",
+     "x": 345,
+     "y": 4,
+     "w": 261,
+     "h": 279,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "farmer_axe_se",
+     "x": 638,
+     "y": 4,
+     "w": 309,
+     "h": 305,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    },
+    {
+     "name": "farmer_harvest_happy_se",
+     "x": 993,
+     "y": 4,
+     "w": 233,
+     "h": 279,
+     "pivotX": 0.5,
+     "pivotY": 0.05
+    }
+   ]
+  },
+  {
+   "path": "Assets/FarmGameArt/Textures/UI/UI_Inventory_Icons_4x4.png",
+   "category": "icon",
+   "width": 1116,
+   "height": 1164,
+   "sprites": [
+    {
+     "name": "icon_carrot",
+     "x": 11,
+     "y": 877,
+     "w": 256,
+     "h": 283,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "icon_cabbage",
+     "x": 291,
+     "y": 877,
+     "w": 255,
+     "h": 241,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "icon_tomato",
+     "x": 574,
+     "y": 877,
+     "w": 247,
+     "h": 239,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "icon_corn",
+     "x": 850,
+     "y": 877,
+     "w": 253,
+     "h": 246,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "icon_potato",
+     "x": 17,
+     "y": 586,
+     "w": 244,
+     "h": 245,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "icon_pumpkin",
+     "x": 293,
+     "y": 586,
+     "w": 250,
+     "h": 246,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "icon_strawberry",
+     "x": 574,
+     "y": 586,
+     "w": 247,
+     "h": 241,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "icon_wheat",
+     "x": 841,
+     "y": 586,
+     "w": 271,
+     "h": 263,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "icon_rice",
+     "x": 4,
+     "y": 295,
+     "w": 271,
+     "h": 281,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "icon_watermelon",
+     "x": 290,
+     "y": 295,
+     "w": 256,
+     "h": 257,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "icon_chicken_egg",
+     "x": 574,
+     "y": 295,
+     "w": 247,
+     "h": 246,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "icon_cow_milk",
+     "x": 852,
+     "y": 295,
+     "w": 248,
+     "h": 257,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "icon_truffle",
+     "x": 15,
+     "y": 4,
+     "w": 248,
+     "h": 243,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "icon_wool",
+     "x": 293,
+     "y": 4,
+     "w": 251,
+     "h": 242,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "icon_goat_milk",
+     "x": 575,
+     "y": 4,
+     "w": 245,
+     "h": 257,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "icon_duck_egg",
+     "x": 854,
+     "y": 4,
+     "w": 244,
+     "h": 241,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    }
+   ]
+  },
+  {
+   "path": "Assets/FarmGameArt/Textures/UI/UI_HUD_Buttons_4x4.png",
+   "category": "icon",
+   "width": 1188,
+   "height": 1144,
+   "sprites": [
+    {
+     "name": "hud_coin",
+     "x": 4,
+     "y": 862,
+     "w": 289,
+     "h": 273,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "hud_energy",
+     "x": 301,
+     "y": 862,
+     "w": 288,
+     "h": 273,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "hud_clock",
+     "x": 598,
+     "y": 862,
+     "w": 288,
+     "h": 273,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "hud_day",
+     "x": 895,
+     "y": 862,
+     "w": 288,
+     "h": 273,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "hud_inventory",
+     "x": 4,
+     "y": 576,
+     "w": 289,
+     "h": 278,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "hud_quest",
+     "x": 301,
+     "y": 576,
+     "w": 289,
+     "h": 278,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "hud_settings",
+     "x": 598,
+     "y": 576,
+     "w": 289,
+     "h": 277,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "hud_shop",
+     "x": 895,
+     "y": 576,
+     "w": 289,
+     "h": 277,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "hud_build",
+     "x": 4,
+     "y": 290,
+     "w": 289,
+     "h": 277,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "hud_seed",
+     "x": 301,
+     "y": 290,
+     "w": 288,
+     "h": 275,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "hud_tools",
+     "x": 598,
+     "y": 290,
+     "w": 288,
+     "h": 275,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "hud_animals",
+     "x": 895,
+     "y": 290,
+     "w": 288,
+     "h": 275,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "hud_map",
+     "x": 4,
+     "y": 4,
+     "w": 289,
+     "h": 276,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "hud_add",
+     "x": 301,
+     "y": 4,
+     "w": 288,
+     "h": 276,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "hud_confirm",
+     "x": 598,
+     "y": 4,
+     "w": 288,
+     "h": 276,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    },
+    {
+     "name": "hud_close",
+     "x": 895,
+     "y": 4,
+     "w": 288,
+     "h": 276,
+     "pivotX": 0.5,
+     "pivotY": 0.5
+    }
+   ]
+  }
+ ]
+}

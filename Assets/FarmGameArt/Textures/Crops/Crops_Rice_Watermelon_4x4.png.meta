@@ -1,0 +1,503 @@
+fileFormatVersion: 2
+guid: 3969617d4918747a7834aca8f4505033
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7309799705765439530
+    second: Crops_Rice_Watermelon_4x4_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rice_dry
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 916
+        width: 297
+        height: 220
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.5977}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a081d85f8a1f4aa5ad36301e87b6b25
+      internalID: -2029827683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rice_watered
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 916
+        width: 295
+        height: 220
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21097e8c0d7e9452ebace7a462efb5ff
+      internalID: -1201318150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rice_sprout
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 916
+        width: 296
+        height: 221
+      alignment: 9
+      pivot: {x: 0.5, y: 0.595}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb7d3717ca5384ae881bd85f6b15eb6e
+      internalID: 1662284805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rice_young
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 916
+        width: 297
+        height: 256
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.5137}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7341e3b2a59174d33b67b41a3f89facc
+      internalID: 1554789861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rice_medium
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 612
+        width: 297
+        height: 296
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.4443}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc346b55d48b14ab7a0ae0f0d388ad7b
+      internalID: -1146962780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rice_mature
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 612
+        width: 296
+        height: 293
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4488}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bbcbc0c26e3c48cb938a30b4003e6fe
+      internalID: -270833050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rice_ready
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 612
+        width: 296
+        height: 289
+      alignment: 9
+      pivot: {x: 0.4966, y: 0.455}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6625093574144c22a20b738f9cfdc44
+      internalID: 1886295891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rice_harvested
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 612
+        width: 296
+        height: 221
+      alignment: 9
+      pivot: {x: 0.5, y: 0.595}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92f6b5f881ab349068d472b93747aa6b
+      internalID: -982732912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watermelon_dry
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 308
+        width: 297
+        height: 224
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.5915}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16f885526c1444a48b7dd0a32f9e0153
+      internalID: 1324507609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watermelon_watered
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 308
+        width: 298
+        height: 224
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5938}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bf667fa491c845daae0312dce06b35e
+      internalID: -699385730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watermelon_sprout
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 308
+        width: 297
+        height: 224
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.5915}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23079529c7b2b43f1b54513c2c84eece
+      internalID: -201027647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watermelon_young
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 308
+        width: 296
+        height: 223
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5942}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dff858c2176bf44d285cbf3b3ac27ba6
+      internalID: -114873183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watermelon_medium
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 4
+        width: 299
+        height: 246
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.5386}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 968dfcfd223e248b7acdc5735839833a
+      internalID: -1247399623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watermelon_mature
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 4
+        width: 299
+        height: 243
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.5453}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd671d78c1a6545c88c796d3c19e2e31
+      internalID: 66235539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watermelon_ready
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 4
+        width: 302
+        height: 263
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5038}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0146068cc3194fe98a2b9e6a791ef71
+      internalID: -1561311502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watermelon_harvested
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 4
+        width: 298
+        height: 226
+      alignment: 9
+      pivot: {x: 0.5034, y: 0.5907}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae6d40154d19b4674afd3e16ce48b813
+      internalID: -1044150338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 604981f9c090d45d5bac79c64b06decb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      rice_dry: -2029827683
+      rice_harvested: -982732912
+      rice_mature: -270833050
+      rice_medium: -1146962780
+      rice_ready: 1886295891
+      rice_sprout: 1662284805
+      rice_watered: -1201318150
+      rice_young: 1554789861
+      watermelon_dry: 1324507609
+      watermelon_harvested: -1044150338
+      watermelon_mature: 66235539
+      watermelon_medium: -1247399623
+      watermelon_ready: -1561311502
+      watermelon_sprout: -201027647
+      watermelon_watered: -699385730
+      watermelon_young: -114873183
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,503 @@
+fileFormatVersion: 2
+guid: 9b07772a279fa4ed280015aec6cd0968
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2472376300157400889
+    second: Crops_Potato_Pumpkin_4x4_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: potato_dry
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 904
+        width: 298
+        height: 220
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.6045}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dad4f5bf6a5084d2f9a4eccb236ef255
+      internalID: -352959682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato_watered
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 904
+        width: 297
+        height: 220
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6045}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7669bb4e3d11c4d51aa64e0e5bc02301
+      internalID: 2052798688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato_sprout
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 904
+        width: 298
+        height: 221
+      alignment: 9
+      pivot: {x: 0.495, y: 0.6018}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 920af16d43ee44895961e6d560ab0bd7
+      internalID: -1113748258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato_young
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 904
+        width: 298
+        height: 224
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.5938}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d14f49e25048b4935a2156419012b662
+      internalID: 662404060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato_medium
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 604
+        width: 300
+        height: 279
+      alignment: 9
+      pivot: {x: 0.5017, y: 0.4767}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b7e9b49cf0e74a6882b9d1b86fd4f73
+      internalID: -620480635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato_mature
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 604
+        width: 298
+        height: 289
+      alignment: 9
+      pivot: {x: 0.5017, y: 0.4602}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 759fc6beedfd04a41a70cb274919781d
+      internalID: -1619178044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato_ready
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 604
+        width: 301
+        height: 292
+      alignment: 9
+      pivot: {x: 0.4967, y: 0.4555}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 103f98df039874839953646230600d45
+      internalID: -880945277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato_harvested
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 604
+        width: 300
+        height: 224
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.5938}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c9cacebb30604d3495bd671b1fbc585
+      internalID: 464338101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pumpkin_dry
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 304
+        width: 300
+        height: 224
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6004}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b73cb304462b4662a40115ab44b1b53
+      internalID: -633829499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pumpkin_watered
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 304
+        width: 300
+        height: 222
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.5991}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d728a1c55d7194f5c997edcdaab0ed3c
+      internalID: -1115938646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pumpkin_sprout
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 304
+        width: 303
+        height: 224
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.6004}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4be94691fb385429b95d33fabb95b35b
+      internalID: 2025664335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pumpkin_young
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 304
+        width: 299
+        height: 223
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.6031}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e186a16c208614145a21e5873a371729
+      internalID: 1232022014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pumpkin_medium
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 4
+        width: 301
+        height: 246
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.5467}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6ef73edb59c149c5877c2a88504ecf0
+      internalID: 1332414453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pumpkin_mature
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 4
+        width: 300
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5628}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcb81e64f69474d8481d1cfd94122714
+      internalID: 894775837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pumpkin_ready
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 4
+        width: 304
+        height: 260
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5173}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f14e0095335ba4dc5bbd6545d6cc9634
+      internalID: -655811076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pumpkin_harvested
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 4
+        width: 299
+        height: 221
+      alignment: 9
+      pivot: {x: 0.4983, y: 0.6086}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6858282897a354952892d3c4a7acb775
+      internalID: 310230863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4b5447a2d65814c478d709e0f1da664e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      potato_dry: -352959682
+      potato_harvested: 464338101
+      potato_mature: -1619178044
+      potato_medium: -620480635
+      potato_ready: -880945277
+      potato_sprout: -1113748258
+      potato_watered: 2052798688
+      potato_young: 662404060
+      pumpkin_dry: -633829499
+      pumpkin_harvested: 310230863
+      pumpkin_mature: 894775837
+      pumpkin_medium: 1332414453
+      pumpkin_ready: -655811076
+      pumpkin_sprout: 2025664335
+      pumpkin_watered: -1115938646
+      pumpkin_young: 1232022014
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
