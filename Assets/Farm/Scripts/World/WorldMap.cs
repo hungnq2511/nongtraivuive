@@ -45,13 +45,57 @@ namespace Farm
             if (!D.initialized) SeedNewGame();
             if (!D.zones.Contains(0)) D.zones.Add(0);
             GenerateTerrain();
-            foreach (PlaceData p in D.places) SpawnPlace(p);
+            SpawnPondArt();
+            foreach (PlaceData p in D.places)
+                if (!IsHouse(p)) SpawnPlace(p);
             foreach (PlotData p in D.plots) SpawnPlot(p);
             foreach (DebrisData d in D.debris)
                 if (!locked[d.gx, d.gy]) SpawnDebris(d);
+            // Enclosures last: older saves had smaller houses, so move one if its new footprint no longer fits.
+            foreach (PlaceData p in D.places)
+            {
+                if (!IsHouse(p)) continue;
+                int size = Defs.Place(p.def).size;
+                if (!CanPlace(size, p.gx, p.gy, null))
+                {
+                    Vector2Int c = FindFreeCell(new Vector2Int(p.gx, p.gy), size);
+                    if (CanPlace(size, c.x, c.y, null)) { p.gx = c.x; p.gy = c.y; }
+                }
+                SpawnPlace(p);
+            }
+            MigrateAnimals();
             foreach (AnimalData a in D.animals) SpawnAnimal(a, null);
             SpawnFishingSpots();
             RefreshSigns();
+        }
+
+        private static bool IsHouse(PlaceData p)
+        {
+            PlaceDef def = Defs.Place(p.def);
+            return def != null && def.kind == PlaceKind.House;
+        }
+
+        /// <summary>Each animal type now has its own enclosure: move animals out of shared old houses,
+        /// building the missing enclosure for free when needed.</summary>
+        private void MigrateAnimals()
+        {
+            foreach (AnimalData a in D.animals)
+            {
+                AnimalDef def = Defs.Animal(a.type);
+                if (def == null) continue;
+                PlaceView home = FindPlace(a.houseUid);
+                if (home != null && home.Def.id == def.house) continue;
+                PlaceView target = FindHouseWithSpace(def.house);
+                if (target == null)
+                {
+                    PlaceDef hd = Defs.Place(def.house);
+                    Vector2Int near = home != null ? new Vector2Int(home.D.gx, home.D.gy) : new Vector2Int(8, 12);
+                    Vector2Int c = FindFreeCell(near, hd.size);
+                    if (!CanPlace(hd.size, c.x, c.y, null)) continue; // no room: stays in its old home
+                    target = AddPlace(hd.id, c.x, c.y);
+                }
+                a.houseUid = target.D.uid;
+            }
         }
 
         private readonly List<FishingSpotView> fishingSpots = new List<FishingSpotView>();
@@ -87,6 +131,9 @@ namespace Farm
                 locked[gx, gy] = z != null && !D.zones.Contains(z.id);
             }
 
+            // The small fish pond is drawn as one picture (Environment_FishPond) when that art exists;
+            // its cells stay water for walking/fishing, with plain grass underneath the picture.
+            bool pondArt = SpriteDB.Exists(PondSprite);
             var rng = new System.Random(7);
             string[] trees = { "nature_pine_tree", "nature_oak_tree", "nature_apple_tree", "nature_bush", "nature_pine_tree", "nature_berry_bush" };
             for (int gx = 0; gx < N; gx++)
@@ -94,7 +141,9 @@ namespace Farm
             {
                 string tile;
                 double r = rng.NextDouble();
-                if (water[gx, gy])
+                if (water[gx, gy] && pondArt && IsSmallPond(gx, gy))
+                    tile = "ground_grass_plain";
+                else if (water[gx, gy])
                 {
                     tile = r < 0.12 ? "water_lilies" : r < 0.2 ? "water_reeds" : "water_deep";
                     foreach (Vector2Int fs in Defs.FishingSpots)
@@ -137,6 +186,25 @@ namespace Farm
                     fog[new Vector2Int(gx, gy)] = tg;
                 }
             }
+        }
+
+        private const string PondSprite = "pond_fish_small";
+        private static readonly Vector2Int PondCenter = new Vector2Int(19, 11);
+        private SpriteRenderer pondSr;
+
+        private static bool IsSmallPond(int gx, int gy) => gx >= 18 && gx <= 20 && gy >= 10 && gy <= 12;
+
+        private void SpawnPondArt()
+        {
+            if (!SpriteDB.Exists(PondSprite)) return;
+            var go = new GameObject("FishPond");
+            go.transform.SetParent(groundRoot, false);
+            go.transform.position = IsoGrid.CellCenter(PondCenter);
+            pondSr = go.AddComponent<SpriteRenderer>();
+            pondSr.sprite = SpriteDB.Get(PondSprite);
+            // above every ground tile and soil, below objects and characters
+            pondSr.sortingOrder = IsoGrid.GroundBase + 900;
+            if (locked[PondCenter.x, PondCenter.y]) pondSr.color = LockedTint;
         }
 
         // ------------------------------------------------------------------ new game
@@ -286,6 +354,7 @@ namespace Farm
                     fog.Remove(c);
                 }
             }
+            if (pondSr != null && !locked[PondCenter.x, PondCenter.y]) pondSr.color = Color.white;
             foreach (DebrisData d in D.debris)
                 if (zoneOf[d.gx, d.gy] == z.id && DebrisList.Find(v => v.D == d) == null) SpawnDebris(d);
             SpawnFishingSpots();
@@ -365,9 +434,7 @@ namespace Farm
             else
             {
                 PlaceView house = FindPlace(a.houseUid);
-                Vector3 c = house != null ? house.transform.position : IsoGrid.ToWorld(8, 12);
-                pos = c + new Vector3(Random.Range(-1f, 1f), -IsoGrid.HalfH * 2.4f + Random.Range(-0.3f, 0.3f), 0);
-                if (!Walkable(IsoGrid.ToCell(pos))) pos = IsoGrid.CellCenter(FindFreeCell(IsoGrid.ToCell(c), 1, true));
+                pos = house != null ? house.RandomYardPoint() : IsoGrid.CellCenter(FindFreeCell(new Vector2Int(8, 12), 1, true));
             }
             AnimalView v = NewEntity<AnimalView>(def.id);
             v.Init(a, pos);
@@ -412,6 +479,9 @@ namespace Farm
                 Vacate(pv.D.gx, pv.D.gy, pv.Def.size);
                 pv.SetCell(gx, gy);
                 Occupy(pv, gx, gy, pv.Def.size);
+                if (pv.Def.kind == PlaceKind.House)
+                    foreach (AnimalView a in Animals)
+                        if (a.D.houseUid == pv.D.uid) a.Relocate();
             }
             else if (e is PlotView plot)
             {
@@ -419,6 +489,17 @@ namespace Farm
                 plot.SetCell(gx, gy);
                 Occupy(plot, gx, gy, 1);
             }
+        }
+
+        /// <summary>Take a building off the map (decor sold or put in storage).</summary>
+        public void RemovePlace(PlaceView v)
+        {
+            if (v == null) return;
+            Vacate(v.D.gx, v.D.gy, v.Def.size);
+            D.places.Remove(v.D);
+            D.placeStates.RemoveAll(s => s.uid == v.D.uid);
+            Places.Remove(v);
+            Destroy(v.gameObject);
         }
 
         public PlaceView FindPlace(int uid) => Places.Find(p => p.D.uid == uid);

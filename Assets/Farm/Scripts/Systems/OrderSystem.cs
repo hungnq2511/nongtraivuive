@@ -33,8 +33,8 @@ namespace Farm
             if (!CanFulfill(o)) return false;
             GameManager gm = GameManager.I;
             foreach (ItemStack r in o.req) gm.RemoveItem(r.id, r.count);
-            gm.AddCoins(o.coins);
-            gm.AddXp(o.xp);
+            gm.AddCoins(Defs.WithBonus(o.coins));
+            gm.AddXp(Defs.WithBonus(o.xp));
             Orders[index] = Generate(20);
             GameEvents.Raise("order");
             return true;

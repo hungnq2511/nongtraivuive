@@ -31,7 +31,7 @@ namespace Farm
             }
         }
 
-        public static void Save(SaveData d)
+        public static bool Save(SaveData d)
         {
             try
             {
@@ -39,10 +39,12 @@ namespace Farm
                 File.WriteAllText(tmp, JsonUtility.ToJson(d));
                 if (File.Exists(FilePath)) File.Delete(FilePath);
                 File.Move(tmp, FilePath);
+                return true;
             }
             catch (Exception e)
             {
                 Debug.LogWarning("[Farm] Save failed: " + e.Message);
+                return false;
             }
         }
 
@@ -60,7 +62,6 @@ namespace Farm
         public SaveData Data { get; private set; }
         public bool IsNewGame { get; private set; }
         public bool MapWasReset { get; private set; }
-        public float Speed = 1f;
 
         public event Action Changed;
         public event Action<int> LeveledUp;
@@ -86,22 +87,31 @@ namespace Farm
 
         private void Update()
         {
-            if (Speed > 1f) Data.timeOffset += Time.unscaledDeltaTime * (Speed - 1f);
             autosaveTimer += Time.unscaledDeltaTime;
             if (autosaveTimer > 15f) { autosaveTimer = 0; SaveNow(); }
         }
 
-        private void OnApplicationPause(bool paused) { if (paused) SaveNow(); }
-        private void OnApplicationQuit() => SaveNow();
+        private void OnApplicationPause(bool paused)
+        {
+            if (paused) { SaveNow(); LocalNotifications.ScheduleAll(); }
+            else LocalNotifications.CancelAll();
+        }
+
+        private void OnApplicationQuit()
+        {
+            SaveNow();
+            LocalNotifications.ScheduleAll();
+        }
 
         public event Action BeforeSave;
 
-        public void SaveNow()
+        /// <summary>Write the save file now. Returns false when it could not be written.</summary>
+        public bool SaveNow()
         {
-            if (Data == null || !Data.initialized) return;
+            if (Data == null || !Data.initialized) return false;
             BeforeSave?.Invoke();
             Data.lastSave = RealNow;
-            SaveSystem.Save(Data);
+            return SaveSystem.Save(Data);
         }
 
         public void NotifyChanged() => Changed?.Invoke();
@@ -123,6 +133,22 @@ namespace Farm
             NotifyChanged();
         }
 
+        // ---------- Gems ----------
+        public bool TrySpendGems(int n)
+        {
+            if (Data.gems < n) return false;
+            Data.gems -= n;
+            NotifyChanged();
+            return true;
+        }
+
+        public void AddGems(int n)
+        {
+            if (n <= 0) return;
+            Data.gems += n;
+            NotifyChanged();
+        }
+
         // ---------- XP ----------
         public void AddXp(int n)
         {
@@ -133,6 +159,7 @@ namespace Farm
                 Data.xp -= Defs.XpToNext(Data.level);
                 Data.level++;
                 Data.coins += Defs.LevelUpCoins(Data.level);
+                Data.gems += Defs.LevelUpGems(Data.level);
                 LeveledUp?.Invoke(Data.level);
                 GameEvents.Raise("level", "", Data.level);
             }
@@ -140,7 +167,7 @@ namespace Farm
         }
 
         // ---------- Storage ----------
-        public int StorageCapacity => Defs.BaseStorage + Defs.StoragePerUpgrade * Data.storageLevel;
+        public int StorageCapacity => Defs.BaseStorage + Defs.StoragePerUpgrade * Data.storageLevel + Defs.HomeStoragePerLevel * (Mathf.Max(1, Data.homeLevel) - 1);
         public int StorageUpgradeCost => 150 * (Data.storageLevel + 1);
 
         public int StorageUsed

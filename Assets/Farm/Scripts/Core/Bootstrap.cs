@@ -22,12 +22,13 @@ namespace Farm
 
             if (SpriteDB.Instance == null || SpriteDB.Instance.sprites.Count == 0)
             {
-                Debug.LogError("[Farm] FarmSpriteDB chưa được tạo. Trong Unity hãy chạy menu: Farm > Setup Project.");
+                Debug.LogError(L.T("[Farm] FarmSpriteDB chưa được tạo. Trong Unity hãy chạy menu: Farm > Setup Project."));
                 return;
             }
 
             var gm = new GameObject("GameManager").AddComponent<GameManager>();
             gm.Init();
+            double lastSave = gm.Data.lastSave; // before anything saves: used for the "while you were away" summary
 
             var world = new GameObject("World").AddComponent<WorldMap>();
             world.Build();
@@ -56,6 +57,10 @@ namespace Farm
             systems.AddComponent<QuestSystem>().Init();
             systems.AddComponent<TaskSystem>().Init();
             systems.AddComponent<DayNight>().Init();
+            systems.AddComponent<PetSystem>().Init();
+            systems.AddComponent<VisitorSystem>().Init();
+            systems.AddComponent<CrowSystem>().Init();
+            Monetization.Ensure(); // store + rewarded ads (kept across scene reloads)
 
             gm.BeforeSave += () =>
             {
@@ -69,20 +74,22 @@ namespace Farm
             {
                 d.lastDailyDate = DateTime.Now.ToString("yyyy-MM-dd");
                 d.dailyStreak = 1;
-                ui.Message("Chào mừng tới Nông Trại Vui Vẻ!",
-                    "• Dùng joystick (góc trái) để đi lại.\n" +
-                    "• Chạm vào ô đất, cây, vật nuôi để làm việc – nông dân sẽ tự đi tới.\n" +
-                    "• Kéo ngón tay qua nhiều ô để cuốc / gieo / tưới / thu hoạch hàng loạt.\n" +
-                    "• Bán nông sản ở Chợ, giao Đơn hàng để kiếm xu và lên cấp!\n" +
-                    "• Lên cấp để mở rộng đất – chạm biển gỗ ở rìa rừng.",
-                    "farmer_harvest_happy_se", "Bắt đầu!");
-                if (gm.MapWasReset) ui.Toast("Bản đồ mới: nông trại đã được làm mới theo phiên bản này.");
+                ui.Message(L.T("Chào mừng tới Nông Trại Vui Vẻ!"),
+                    L.T("• Dùng joystick (góc trái) để đi lại.\n") +
+                    L.T("• Chạm vào ô đất, cây, vật nuôi để làm việc – nông dân sẽ tự đi tới.\n") +
+                    L.T("• Kéo ngón tay qua nhiều ô để cuốc / gieo / tưới / thu hoạch hàng loạt.\n") +
+                    L.T("• Bày hàng ở Chợ cho khách mua, giao Đơn hàng để kiếm xu và lên cấp!\n") +
+                    L.T("• Lên cấp để mở rộng đất – chạm biển gỗ ở rìa rừng."),
+                    "farmer_harvest_happy_se", L.T("Bắt đầu!"));
+                if (gm.MapWasReset) ui.Toast(L.T("Bản đồ mới: nông trại đã được làm mới theo phiên bản này."));
                 gm.SaveNow();
             }
             else
             {
+                LocalNotifications.CancelAll();
+                if (d.level >= 2) LocalNotifications.RequestPermission();
                 CheckDaily(gm, ui);
-                ReportOffline(gm, ui);
+                if (lastSave > 0) ui.ShowWelcomeBack(GameManager.RealNow - lastSave, lastSave + d.timeOffset);
             }
         }
 
@@ -95,18 +102,34 @@ namespace Farm
             d.dailyStreak = d.lastDailyDate == yesterday ? Mathf.Min(d.dailyStreak + 1, 7) : 1;
             d.lastDailyDate = today;
             int reward = 30 * d.dailyStreak;
+            int gems = d.dailyStreak >= 7 ? Defs.DailyStreakGems : Defs.DailyGems;
             gm.AddCoins(reward);
-            ui.Message("Quà hằng ngày", $"Ngày đăng nhập liên tiếp thứ <b>{d.dailyStreak}</b>!\n\nBạn nhận được <b>+{reward} xu</b>.\nĐăng nhập mỗi ngày để nhận quà lớn hơn (tối đa 7 ngày).", "hud_coin", "Nhận quà");
+            gm.AddGems(gems);
+            ui.Message(L.T("Quà hằng ngày"), L.F("Ngày đăng nhập liên tiếp thứ <b>{0}</b>!\n\nBạn nhận được <b>+{1} xu, +{2} kim cương</b>.\nĐăng nhập mỗi ngày để nhận quà lớn hơn (ngày thứ 7: +{3} kim cương).", d.dailyStreak, reward, gems, Defs.DailyStreakGems), "hud_gift", L.T("Nhận quà"));
         }
 
-        private static void ReportOffline(GameManager gm, UIManager ui)
+        private double pausedAt;
+
+        /// <summary>Back from the background on mobile: daily gift + summary of what finished meanwhile.</summary>
+        private void OnApplicationPause(bool paused)
         {
-            int ready = 0;
-            foreach (PlotView p in WorldMap.I.Plots) if (p.IsReady) ready++;
-            int animals = 0;
-            foreach (AnimalView a in WorldMap.I.Animals) if (a.IsReady) animals++;
-            if (ready + animals > 0)
-                ui.Toast($"Trong lúc bạn vắng: {ready} ô cây đã chín, {animals} vật nuôi có sản phẩm!");
+            GameManager gm = GameManager.I;
+            if (gm == null || UIManager.I == null || resetting) return;
+            if (paused) { pausedAt = GameManager.RealNow; return; }
+            if (pausedAt <= 0) return;
+            double away = GameManager.RealNow - pausedAt;
+            double since = pausedAt + gm.Data.timeOffset;
+            pausedAt = 0;
+            CheckDaily(gm, UIManager.I);
+            UIManager.I.ShowWelcomeBack(away, since);
+        }
+
+        /// <summary>Change the UI language: save, then reload the scene so every label is rebuilt.</summary>
+        public static void SwitchLanguage(bool english)
+        {
+            if (GameManager.I != null) GameManager.I.SaveNow();
+            L.Set(english);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         public static void ResetGame()

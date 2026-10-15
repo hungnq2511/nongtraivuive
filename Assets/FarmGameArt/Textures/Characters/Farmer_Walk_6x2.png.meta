@@ -1,0 +1,470 @@
+fileFormatVersion: 2
+guid: 0e33a43ee21dd44bd9c73fcbdba52dde
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1894974191852122212
+    second: Farmer_Walk_6x2_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: farmer_walk6_se_1
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 307
+        width: 206
+        height: 294
+      alignment: 9
+      pivot: {x: 0.534, y: 0.0504}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42f94e13d3f1c42899abf134d945bce6
+      internalID: 742680769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farmer_walk6_se_2
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 307
+        width: 207
+        height: 292
+      alignment: 9
+      pivot: {x: 0.5604, y: 0.0505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 482ef21b4ac0846ebbae68b8daf5fab2
+      internalID: 1471826498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farmer_walk6_se_3
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 307
+        width: 205
+        height: 293
+      alignment: 9
+      pivot: {x: 0.5463, y: 0.0505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d84ea9f153d74f60aa6485d764bb31b
+      internalID: -1030164256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farmer_walk6_se_4
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 307
+        width: 207
+        height: 294
+      alignment: 9
+      pivot: {x: 0.5314, y: 0.0504}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e727c13745fb845af892db98ed45b695
+      internalID: 1681635615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farmer_walk6_se_5
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 307
+        width: 208
+        height: 294
+      alignment: 9
+      pivot: {x: 0.5553, y: 0.0504}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5447cf9e8a944578a20c1f556db046a
+      internalID: 558456290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farmer_walk6_se_6
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 307
+        width: 208
+        height: 295
+      alignment: 9
+      pivot: {x: 0.5457, y: 0.0503}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e02de0f5280449b7ad6f0e8f74da656
+      internalID: 4677741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farmer_walk6_sw_1
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 4
+        width: 207
+        height: 293
+      alignment: 9
+      pivot: {x: 0.4517, y: 0.0505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bade0b535dd9d4073a26dc747cbcf79d
+      internalID: -45767270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farmer_walk6_sw_2
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 4
+        width: 210
+        height: 287
+      alignment: 9
+      pivot: {x: 0.4357, y: 0.0509}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16f70ecde57d94a129353b073c036a8d
+      internalID: -954176382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farmer_walk6_sw_3
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 4
+        width: 204
+        height: 293
+      alignment: 9
+      pivot: {x: 0.4412, y: 0.0505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4056214c02084b7aac184d07a5fc8b5
+      internalID: 1818733480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farmer_walk6_sw_4
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 4
+        width: 202
+        height: 293
+      alignment: 9
+      pivot: {x: 0.453, y: 0.0505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 220a453f6b1874ac69e6ceab17f82640
+      internalID: 22525939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farmer_walk6_sw_5
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 4
+        width: 207
+        height: 288
+      alignment: 9
+      pivot: {x: 0.4541, y: 0.0508}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b20b8c76146a740219fdb0fcc8d6295a
+      internalID: -1093755177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farmer_walk6_sw_6
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 4
+        width: 205
+        height: 293
+      alignment: 9
+      pivot: {x: 0.478, y: 0.0505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d115b95bb62ad4431a9cb14b89ae5f24
+      internalID: 992712791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farmer_walk6_se_L
+      rect:
+        serializedVersion: 2
+        x: 1316
+        y: 305
+        width: 202
+        height: 296
+      alignment: 9
+      pivot: {x: 0.5334, y: 0.0514}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f658be3c485f41eabaf951bb0ded702
+      internalID: 589324842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farmer_walk6_se_R
+      rect:
+        serializedVersion: 2
+        x: 1526
+        y: 303
+        width: 200
+        height: 298
+      alignment: 9
+      pivot: {x: 0.5477, y: 0.0513}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8077640fc43024a5d914be8f2cc1a635
+      internalID: 1503936503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 153a47c6606fc41f88c6b6267be3d603
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      farmer_walk6_se_1: 742680769
+      farmer_walk6_se_2: 1471826498
+      farmer_walk6_se_3: -1030164256
+      farmer_walk6_se_4: 1681635615
+      farmer_walk6_se_5: 558456290
+      farmer_walk6_se_6: 4677741
+      farmer_walk6_se_L: 589324842
+      farmer_walk6_se_R: 1503936503
+      farmer_walk6_sw_1: -45767270
+      farmer_walk6_sw_2: -954176382
+      farmer_walk6_sw_3: 1818733480
+      farmer_walk6_sw_4: 22525939
+      farmer_walk6_sw_5: -1093755177
+      farmer_walk6_sw_6: 992712791
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

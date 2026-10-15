@@ -23,6 +23,20 @@ namespace Farm
             }
         }
 
+        /// <summary>True when the atlas really contains this sprite (no fallback, no warning).</summary>
+        public static bool Exists(string name)
+        {
+            SpriteDB db = Instance;
+            if (db == null || string.IsNullOrEmpty(name)) return false;
+            if (db.map == null)
+            {
+                db.map = new Dictionary<string, Sprite>();
+                foreach (Sprite sp in db.sprites)
+                    if (sp != null) db.map[sp.name] = sp;
+            }
+            return db.map.TryGetValue(name, out Sprite s) && s != null && s.name == name;
+        }
+
         public static Sprite Get(string name)
         {
             SpriteDB db = Instance;

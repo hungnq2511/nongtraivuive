@@ -46,6 +46,8 @@ namespace Farm
         public float scale = 1f;
         public PlaceKind kind;
         public bool shop = true;
+        /// <summary>Animal enclosures: walkable yard quad (left, front, right, back), see Defs.Yard.</summary>
+        public Vector2[] yard;
         public int Xp => Mathf.Max(1, cost / 10);
     }
 
@@ -66,6 +68,7 @@ namespace Farm
             new CropDef { id = "tomato",     name = "Cà chua",  unlock = 5,  seedCost = 14, growSec = 900,  sell = 18, xp = 6 },
             new CropDef { id = "rice",       name = "Lúa nước", unlock = 6,  seedCost = 16, growSec = 1200, sell = 21, xp = 7 },
             new CropDef { id = "strawberry", name = "Dâu tây",  unlock = 7,  seedCost = 22, growSec = 1800, sell = 28, xp = 9 },
+            new CropDef { id = "sugarcane",  name = "Mía",      unlock = 8,  seedCost = 18, growSec = 1500, sell = 24, xp = 8 },
             new CropDef { id = "pumpkin",    name = "Bí đỏ",    unlock = 9,  seedCost = 30, growSec = 2700, sell = 38, xp = 12 },
             new CropDef { id = "watermelon", name = "Dưa hấu",  unlock = 11, seedCost = 40, growSec = 3600, sell = 52, xp = 15 },
         };
@@ -75,9 +78,9 @@ namespace Farm
             new AnimalDef { id = "chicken", name = "Gà",  unlock = 1, cost = 40,  feed = "wheat",   product = "egg",       produceSec = 90,  house = "coop",   scale = 0.42f },
             new AnimalDef { id = "cow",     name = "Bò",  unlock = 3, cost = 150, feed = "corn",    product = "milk",      produceSec = 240, house = "dairy",  scale = 0.80f, back = "sw" },
             new AnimalDef { id = "pig",     name = "Lợn", unlock = 4, cost = 200, feed = "carrot",  product = "truffle",   produceSec = 300, house = "stable", scale = 0.60f },
-            new AnimalDef { id = "sheep",   name = "Cừu", unlock = 5, cost = 260, feed = "cabbage", product = "wool",      produceSec = 420, house = "stable", scale = 0.62f },
-            new AnimalDef { id = "goat",    name = "Dê",  unlock = 6, cost = 320, feed = "potato",  product = "goat_milk", produceSec = 480, house = "dairy",  scale = 0.62f },
-            new AnimalDef { id = "duck",    name = "Vịt", unlock = 7, cost = 380, feed = "rice",    product = "duck_egg",  produceSec = 360, house = "coop",   scale = 0.42f },
+            new AnimalDef { id = "sheep",   name = "Cừu", unlock = 5, cost = 260, feed = "cabbage", product = "wool",      produceSec = 420, house = "sheep_pen", scale = 0.62f },
+            new AnimalDef { id = "goat",    name = "Dê",  unlock = 6, cost = 320, feed = "potato",  product = "goat_milk", produceSec = 480, house = "goat_pen", scale = 0.62f },
+            new AnimalDef { id = "duck",    name = "Vịt", unlock = 7, cost = 380, feed = "rice",    product = "duck_egg",  produceSec = 360, house = "duck_pen", scale = 0.42f },
         };
 
         public static readonly List<ItemDef> Products = new List<ItemDef>
@@ -108,18 +111,37 @@ namespace Farm
             new PlaceDef { id = "bakery",        name = "Lò bánh",       sprite = "building_bakery",         size = 2, scale = 1.8f, kind = PlaceKind.Machine, cost = 800,  unlock = 6, category = "machine" },
             new PlaceDef { id = "dairy_factory", name = "Xưởng bơ sữa",  sprite = "building_dairy_factory",  size = 2, scale = 1.8f, kind = PlaceKind.Machine, cost = 1200, unlock = 8, category = "machine" },
             new PlaceDef { id = "juice_press",   name = "Máy ép nước",   sprite = "building_juice_press",    size = 2, scale = 1.8f, kind = PlaceKind.Machine, cost = 1500, unlock = 9, category = "machine" },
+            new PlaceDef { id = "sugar_mill",      name = "Xưởng đường",  sprite = "building_sugar_mill",      size = 2, scale = 1.8f, kind = PlaceKind.Machine, cost = 1800, unlock = 10, category = "machine" },
+            new PlaceDef { id = "popcorn_maker",   name = "Máy bỏng ngô", sprite = "building_popcorn_maker",   size = 2, scale = 1.7f, kind = PlaceKind.Machine, cost = 2200, unlock = 12, category = "machine" },
+            new PlaceDef { id = "loom",            name = "Khung dệt",    sprite = "building_loom",            size = 2, scale = 1.7f, kind = PlaceKind.Machine, cost = 2800, unlock = 14, category = "machine" },
+            new PlaceDef { id = "ice_cream_maker", name = "Máy làm kem",  sprite = "building_ice_cream_maker", size = 2, scale = 1.7f, kind = PlaceKind.Machine, cost = 3200, unlock = 16, category = "machine" },
 
             // Fruit trees (harvest many times)
             new PlaceDef { id = "berry_bush", name = "Bụi quả mọng", sprite = "nature_berry_bush", scale = 0.8f, kind = PlaceKind.Tree, cost = 80,  unlock = 3, category = "land" },
             new PlaceDef { id = "apple_tree", name = "Cây táo",      sprite = "nature_apple_tree", scale = 1.2f, kind = PlaceKind.Tree, cost = 150, unlock = 4, category = "land" },
+            new PlaceDef { id = "beehive",     name = "Tổ ong",      sprite = "building_beehive",   scale = 1.0f, kind = PlaceKind.Tree, cost = 350, unlock = 4, category = "land" },
+            new PlaceDef { id = "cherry_tree", name = "Cây anh đào", sprite = "nature_cherry_tree", scale = 1.2f, kind = PlaceKind.Tree, cost = 220, unlock = 5, category = "land" },
+            new PlaceDef { id = "orange_tree", name = "Cây cam",     sprite = "nature_orange_tree", scale = 1.2f, kind = PlaceKind.Tree, cost = 280, unlock = 6, category = "land" },
+            new PlaceDef { id = "lemon_tree",  name = "Cây chanh",   sprite = "nature_lemon_tree",  scale = 1.2f, kind = PlaceKind.Tree, cost = 340, unlock = 7, category = "land" },
 
             // Delivery truck (big multi-crate orders)
             new PlaceDef { id = "delivery", name = "Trạm xe tải", sprite = "building_delivery_truck", size = 2, scale = 1.7f, kind = PlaceKind.Delivery, cost = 300, unlock = 5, category = "machine" },
 
             // Animal houses
-            new PlaceDef { id = "coop",   name = "Chuồng gà vịt", sprite = "building_chicken_coop",  size = 2, scale = 1.7f, kind = PlaceKind.House, cost = 300, unlock = 1, capacity = 6, category = "house" },
-            new PlaceDef { id = "dairy",  name = "Chuồng bò dê",  sprite = "building_dairy_shed",    size = 2, scale = 1.8f, kind = PlaceKind.House, cost = 600, unlock = 3, capacity = 6, category = "house" },
-            new PlaceDef { id = "stable", name = "Chuồng lợn cừu",sprite = "building_animal_stable", size = 2, scale = 1.8f, kind = PlaceKind.House, cost = 900, unlock = 4, capacity = 6, category = "house" },
+            // Animal enclosures (house + fenced yard, one per animal type). yard = walkable floor quad
+            // (left, front, right, back corners) in units of the footprint's half width, y pointing down.
+            new PlaceDef { id = "coop",      name = "Chuồng gà",  sprite = "enclosure_chicken", size = 3, scale = 1.1085f, kind = PlaceKind.House, cost = 300,  unlock = 1, capacity = 6, category = "house",
+                           yard = Yard(-0.4572f, -0.1051f, -0.0037f, 0.0694f, 0.4359f, -0.119f, -0.0107f, -0.3004f) },
+            new PlaceDef { id = "dairy",     name = "Chuồng bò",  sprite = "enclosure_cow",     size = 4, scale = 1.2737f, kind = PlaceKind.House, cost = 600,  unlock = 3, capacity = 6, category = "house",
+                           yard = Yard(-0.4678f, 0.0152f, -0.0169f, 0.1414f, 0.5603f, -0.0028f, 0.0913f, -0.1832f) },
+            new PlaceDef { id = "stable",    name = "Chuồng lợn", sprite = "enclosure_pig",     size = 4, scale = 1.2865f, kind = PlaceKind.House, cost = 800,  unlock = 4, capacity = 6, category = "house",
+                           yard = Yard(-0.3904f, -0.0429f, -0.0806f, 0.0761f, 0.3566f, -0.0611f, -0.0989f, -0.2154f) },
+            new PlaceDef { id = "sheep_pen", name = "Chuồng cừu", sprite = "enclosure_sheep",   size = 4, scale = 1.3006f, kind = PlaceKind.House, cost = 1000, unlock = 5, capacity = 6, category = "house",
+                           yard = Yard(-0.5846f, -0.0443f, -0.0321f, 0.1399f, 0.502f, -0.0075f, -0.0873f, -0.2285f) },
+            new PlaceDef { id = "goat_pen",  name = "Chuồng dê",  sprite = "enclosure_goat",    size = 4, scale = 1.3747f, kind = PlaceKind.House, cost = 1200, unlock = 6, capacity = 6, category = "house",
+                           yard = Yard(-0.5371f, -0.077f, -0.0505f, 0.1372f, 0.4362f, 0.0009f, -0.1283f, -0.1938f) },
+            new PlaceDef { id = "duck_pen",  name = "Ao vịt",     sprite = "enclosure_duck",    size = 3, scale = 1.1828f, kind = PlaceKind.House, cost = 1400, unlock = 7, capacity = 6, category = "house",
+                           yard = Yard(-0.5639f, -0.0233f, -0.0949f, 0.1331f, 0.5081f, -0.0456f, 0.1954f, -0.2391f) },
 
             // Decorations
             new PlaceDef { id = "flower_patch", name = "Khóm hoa",    sprite = "nature_flower_patch", scale = 0.6f,  kind = PlaceKind.Decor, cost = 30,  unlock = 1, category = "decor" },
@@ -140,6 +162,8 @@ namespace Farm
             new PlaceDef { id = "gate",         name = "Cổng nông trại", sprite = "building_farm_gate", size = 2, scale = 1.7f, kind = PlaceKind.Decor, cost = 250, unlock = 5, category = "decor" },
             new PlaceDef { id = "well",         name = "Giếng đá",    sprite = "building_stone_well", scale = 1.0f,  kind = PlaceKind.Decor, cost = 300, unlock = 6, category = "decor" },
             new PlaceDef { id = "tool_shed",    name = "Kho dụng cụ", sprite = "building_tool_shed",  size = 2, scale = 1.7f, kind = PlaceKind.Decor, cost = 500, unlock = 6, category = "decor" },
+            new PlaceDef { id = "fountain",       name = "Đài phun nước", sprite = "decor_fountain",          scale = 1.1f, kind = PlaceKind.Decor, cost = 450,  unlock = 8,  category = "decor" },
+            new PlaceDef { id = "roadside_stand", name = "Sạp rau ven đường", sprite = "building_roadside_stand", size = 2, scale = 1.7f, kind = PlaceKind.Decor, cost = 600, unlock = 9, category = "decor" },
             new PlaceDef { id = "silo",         name = "Tháp chứa",   sprite = "building_silo",       size = 2, scale = 1.6f, kind = PlaceKind.Decor, cost = 600, unlock = 7, category = "decor" },
         };
 
@@ -181,6 +205,7 @@ namespace Farm
                         items[c.id] = new ItemDef { id = c.id, name = c.name, icon = c.Icon, sell = c.sell, xp = c.xp, unlock = c.unlock };
                     foreach (ItemDef p in Products) items[p.id] = p;
                     foreach (ItemDef p in ExtraItems) items[p.id] = p;
+                    foreach (ItemDef p in Materials) items[p.id] = p;
                 }
                 return items;
             }
@@ -190,6 +215,9 @@ namespace Farm
         public static AnimalDef Animal(string id) => Animals.Find(a => a.id == id);
         public static PlaceDef Place(string id) => Places.Find(p => p.id == id);
         public static DebrisDef DebrisBySprite(string s) => Debris.Find(d => d.sprite == s);
+        private static Vector2[] Yard(float lx, float ly, float fx, float fy, float rx, float ry, float bx, float by) =>
+            new[] { new Vector2(lx, ly), new Vector2(fx, fy), new Vector2(rx, ry), new Vector2(bx, by) };
+
         public static ItemDef Item(string id) => id != null && Items.TryGetValue(id, out ItemDef d) ? d : null;
 
         public static int XpToNext(int level)
@@ -204,7 +232,7 @@ namespace Farm
         {
             if (seconds < 0) seconds = 0;
             int s = Mathf.CeilToInt((float)seconds);
-            if (s >= 3600) return $"{s / 3600}g {(s % 3600) / 60:00}p";
+            if (s >= 3600) return L.En ? $"{s / 3600}h {(s % 3600) / 60:00}m" : $"{s / 3600}g {(s % 3600) / 60:00}p";
             if (s >= 60) return $"{s / 60}:{s % 60:00}";
             return s + "s";
         }

@@ -20,7 +20,7 @@ namespace Farm
             Def = Defs.Place(d.def);
             Sr = MakeSprite(Def.sprite, Def.scale);
             shownSprite = Def.sprite;
-            if (Def.kind == PlaceKind.Machine || Def.kind == PlaceKind.Tree || Def.kind == PlaceKind.Delivery)
+            if (Def.kind == PlaceKind.Machine || Def.kind == PlaceKind.Tree || Def.kind == PlaceKind.Delivery || Def.action == "market")
                 bubble = WorldBubble.Create(transform, Def.size > 1 ? 2.9f : 1.0f + 1.4f * Def.scale);
             if (Def.id == "lamp")
             {
@@ -34,7 +34,23 @@ namespace Farm
             }
             if (Def.kind == PlaceKind.Tree) Orchard.State(this);
             SetCell(d.gx, d.gy);
+            RefreshHomeLook();
         }
+
+        /// <summary>Farmhouse (B3.1): use the level art when it exists, otherwise grow the house a little per level.</summary>
+        public void RefreshHomeLook()
+        {
+            if (Def.id != "farmhouse" || GameManager.I == null) return;
+            int lvl = Mathf.Max(1, GameManager.I.Data.homeLevel);
+            string sp = Defs.HomeSprite(lvl);
+            shownSprite = sp;
+            Sr.sprite = SpriteDB.Get(sp);
+            float k = sp == Def.sprite ? 1f + 0.04f * (lvl - 1) : 1f;
+            BaseScale = Vector3.one * Def.scale * k;
+            Sr.transform.localScale = BaseScale;
+        }
+
+        public bool IsDecor => Def.kind == PlaceKind.Decor;
 
         public static Vector3 CenterOf(PlaceDef def, int gx, int gy)
         {
@@ -47,8 +63,72 @@ namespace Farm
             D.gx = gx;
             D.gy = gy;
             transform.position = CenterOf(Def, gx, gy);
-            Sr.sortingOrder = IsoGrid.SortOrder(transform.position.y);
+            // Enclosures sort behind the back edge of their yard so the animals inside draw on top.
+            Sr.sortingOrder = IsEnclosure
+                ? IsoGrid.SortOrder(YardPoint(Def.yard[3]).y + 0.05f)
+                : IsoGrid.SortOrder(transform.position.y);
             if (glow != null) glow.sortingOrder = Sr.sortingOrder + 1;
+        }
+
+        // ------------------------------------------------------------------ animal enclosure yard
+        public bool IsEnclosure => Def.kind == PlaceKind.House && Def.yard != null && Def.yard.Length == 4;
+
+        /// <summary>Yard corner (normalized, y down) → world position.</summary>
+        public Vector3 YardPoint(Vector2 n)
+        {
+            float k = Def.size * IsoGrid.HalfW;
+            return transform.position + new Vector3(n.x * k, -n.y * k, 0f);
+        }
+
+        /// <summary>Random point on the fenced yard floor (or near the building if it has no yard).</summary>
+        public Vector3 RandomYardPoint()
+        {
+            if (!IsEnclosure)
+                return transform.position + new Vector3(Random.Range(-1f, 1f), -IsoGrid.HalfH * 2.2f + Random.Range(-0.3f, 0.3f), 0);
+            Vector2[] q = Def.yard; // left, front, right, back
+            float a = Random.value, b = Random.value;
+            Vector2 n = Vector2.Lerp(Vector2.Lerp(q[3], q[2], a), Vector2.Lerp(q[0], q[1], a), b);
+            return YardPoint(n);
+        }
+
+        public bool InYard(Vector3 world)
+        {
+            if (!IsEnclosure) return true;
+            Vector2[] q = Def.yard;
+            float sign = 0f;
+            for (int i = 0; i < 4; i++)
+            {
+                Vector3 a = YardPoint(q[i]), b = YardPoint(q[(i + 1) % 4]);
+                float cross = (b.x - a.x) * (world.y - a.y) - (b.y - a.y) * (world.x - a.x);
+                if (Mathf.Abs(cross) < 1e-5f) continue;
+                if (sign == 0f) sign = Mathf.Sign(cross);
+                else if (Mathf.Sign(cross) != sign) return false;
+            }
+            return true;
+        }
+
+        /// <summary>Where the farmer stands to tend the animals: outside the gate (front-left fence, near the front corner).</summary>
+        public Vector3 GatePoint
+        {
+            get
+            {
+                int n = Def.size;
+                var candidates = new[]
+                {
+                    new Vector2Int(D.gx + n - 2, D.gy + n), new Vector2Int(D.gx + n - 1, D.gy + n), new Vector2Int(D.gx + n - 3, D.gy + n),
+                    new Vector2Int(D.gx + n, D.gy + n - 1), new Vector2Int(D.gx + n, D.gy + n - 2), new Vector2Int(D.gx + n, D.gy + n),
+                };
+                foreach (Vector2Int c in candidates)
+                    if (WorldMap.I.Walkable(c)) return IsoGrid.CellCenter(c);
+                for (int i = -1; i <= n; i++)
+                {
+                    var a = new Vector2Int(D.gx + i, D.gy - 1);
+                    var b = new Vector2Int(D.gx - 1, D.gy + i);
+                    if (WorldMap.I.Walkable(a)) return IsoGrid.CellCenter(a);
+                    if (WorldMap.I.Walkable(b)) return IsoGrid.CellCenter(b);
+                }
+                return IsoGrid.CellCenter(candidates[0]);
+            }
         }
 
         public override bool HitTest(Vector2 p)
@@ -92,6 +172,14 @@ namespace Farm
                     else bubble.Hide();
                     break;
                 }
+                case PlaceKind.Special:
+                    if (Def.action == "market")
+                    {
+                        if (Market.AnySold) bubble.Show("hud_coin", 0.3f);
+                        else if (Market.ListedCount == 0) bubble.Show("hud_add", 0.3f);
+                        else bubble.Hide();
+                    }
+                    break;
                 case PlaceKind.Delivery:
                     if (!Delivery.Waiting && Delivery.AllFilled) bubble.Show("hud_confirm", 0.3f);
                     else if (!Delivery.Waiting) bubble.Show("hud_truck", 0.3f);
@@ -109,8 +197,18 @@ namespace Farm
                 case PlaceKind.Special:
                     switch (Def.action)
                     {
-                        case "storage": ui.OpenStorage(false); break;
-                        case "market": ui.OpenStorage(true); break;
+                        case "storage": ui.OpenStorage(); break;
+                        case "market":
+                        {
+                            int coins = Market.CollectAll();
+                            if (coins > 0)
+                            {
+                                ui.FloatText(transform.position + Vector3.up * 1.5f, "+" + coins, "hud_coin");
+                                ui.Toast(L.F("Khách đã mua hàng: +{0} xu", coins));
+                            }
+                            ui.OpenMarket();
+                            break;
+                        }
                         case "shop": ui.OpenShop(null); break;
                         case "orders": ui.OpenOrders(); break;
                         case "farmhouse": ui.OpenFarmhouse(); break;
@@ -132,10 +230,11 @@ namespace Farm
                     ui.OpenDelivery();
                     break;
                 case PlaceKind.Sprinkler:
-                    ui.ShowTooltip(transform.position + Vector3.up, "Vòi phun tự tưới\ncác ô đất xung quanh");
+                    ui.ShowTooltip(transform.position + Vector3.up, L.T("Vòi phun tự tưới\ncác ô đất xung quanh"));
                     break;
                 default:
-                    ui.ShowTooltip(transform.position + Vector3.up * (0.6f + Def.scale), Def.name);
+                    if (IsDecor) ui.OpenDecor(this);
+                    else ui.ShowTooltip(transform.position + Vector3.up * (0.6f + Def.scale), Def.name);
                     break;
             }
         }
@@ -144,12 +243,14 @@ namespace Farm
         {
             TreeDef t = Defs.Tree(Def.id);
             PlaceState s = Orchard.State(this);
-            if (s.count <= 0)
+            bool endless = Orchard.Endless(this);
+            ItemDef fruit = Defs.Item(t.fruit);
+            if (Orchard.IsDead(this))
             {
                 int cost = Def.cost / 2;
-                UIManager.I.Confirm("Cây đã già", $"{Def.name} đã cho hết quả.\nTrồng lại với giá {cost} xu?", () =>
+                UIManager.I.Confirm(L.T("Cây đã già"), L.F("{0} đã cho hết quả.\nTrồng lại với giá {1} xu?", Def.name, cost), () =>
                 {
-                    if (!GameManager.I.TrySpend(cost)) { UIManager.I.Toast("Không đủ xu!"); return; }
+                    if (!GameManager.I.TrySpend(cost)) { UIManager.I.Toast(L.T("Không đủ xu!")); return; }
                     s.count = t.harvests;
                     s.t = GameManager.I.Now + t.cycleSec;
                     refresh = 0;
@@ -158,11 +259,16 @@ namespace Farm
             }
             if (!Orchard.IsReady(this))
             {
-                UIManager.I.ShowTooltip(transform.position + Vector3.up * (0.8f + Def.scale),
-                    $"{Def.name}: còn {s.count} lần thu\nQuả chín sau {Defs.FormatTime(s.t - GameManager.I.Now)}");
+                string info = endless
+                    ? L.F("{0}: {1} sau {2}\nCây ăn quả gần tổ ong được +1 quả", Def.name, fruit.name, Defs.FormatTime(s.t - GameManager.I.Now))
+                    : L.F("{0}: còn {1} lần thu", Def.name, s.count) + (Orchard.Pollinated(this) ? L.T(" · có ong thụ phấn +1") : "") +
+                      L.F("\nQuả chín sau {0}", Defs.FormatTime(s.t - GameManager.I.Now));
+                UIManager.I.ShowSpeedUp(transform.position + Vector3.up * (0.8f + Def.scale), info, s.t - GameManager.I.Now,
+                    () => { s.t = GameManager.I.Now; refresh = 0; });
                 return;
             }
-            if (!GameManager.I.HasSpace(t.yield)) { UIManager.I.Toast("Kho đầy! Hãy bán bớt hoặc nâng cấp kho."); return; }
+            int amount = Orchard.Yield(this);
+            if (!GameManager.I.HasSpace(amount)) { UIManager.I.Toast(L.T("Kho đầy! Mang hàng ra Chợ bán hoặc nâng cấp kho.")); return; }
             if (Pending) return;
             Pending = true;
             FarmerController.I.Enqueue(new FarmTask
@@ -171,17 +277,20 @@ namespace Farm
                 target = () => transform.position,
                 pose = "harvest_happy",
                 reach = 1.3f,
-                canDo = () => Orchard.IsReady(this) && GameManager.I.HasSpace(t.yield),
+                canDo = () => Orchard.IsReady(this) && GameManager.I.HasSpace(Orchard.Yield(this)),
                 doIt = () =>
                 {
-                    ItemDef fruit = Defs.Item(t.fruit);
-                    GameManager.I.AddItem(fruit.id, t.yield);
+                    int n = Orchard.Yield(this);
+                    GameManager.I.AddItem(fruit.id, n);
                     GameManager.I.AddXp(fruit.xp);
-                    s.count--;
+                    if (!endless) s.count--;
                     s.t = GameManager.I.Now + t.cycleSec;
-                    UIManager.I.FloatText(transform.position + Vector3.up * 1.2f, "+" + t.yield, fruit.icon);
-                    GameEvents.Raise("harvest_fruit", fruit.id, t.yield);
-                    if (s.count <= 0) UIManager.I.Toast($"{Def.name} đã cho hết quả – chạm để trồng lại.");
+                    UIManager.I.FloatText(transform.position + Vector3.up * 1.2f, "+" + n, fruit.icon);
+                    if (endless) Fx.Sparkle(transform.position, Fx.Gold, 10);
+                    else Fx.Leaves(transform.position + Vector3.up * 0.8f, Color.white);
+                    Haptics.Light();
+                    GameEvents.Raise("harvest_fruit", fruit.id, n);
+                    if (!endless && s.count <= 0) UIManager.I.Toast(L.F("{0} đã cho hết quả – chạm để trồng lại.", Def.name));
                     refresh = 0;
                 }
             });
@@ -205,12 +314,35 @@ namespace Farm
         public override bool HitTest(Vector2 p) => IsoGrid.InDiamond(p, transform.position);
         public override int HitOrder => IsoGrid.SortOrder(transform.position.y);
 
+        /// <summary>Closest walkable land cell around the spot (nearest ring first, then nearest to the farmer).</summary>
+        private Vector3 ShorePoint()
+        {
+            Vector2 farmer = FarmerController.I.transform.position;
+            for (int r = 1; r <= 4; r++)
+            {
+                bool found = false;
+                Vector2Int best = Cell;
+                float bd = float.MaxValue;
+                for (int dx = -r; dx <= r; dx++)
+                for (int dy = -r; dy <= r; dy++)
+                {
+                    if (Mathf.Max(Mathf.Abs(dx), Mathf.Abs(dy)) != r) continue;
+                    var c = new Vector2Int(Cell.x + dx, Cell.y + dy);
+                    if (!WorldMap.I.Walkable(c)) continue;
+                    float d = Vector2.Distance(IsoGrid.CellCenter(c), farmer);
+                    if (d < bd) { bd = d; best = c; found = true; }
+                }
+                if (found) return IsoGrid.CellCenter(best);
+            }
+            return transform.position;
+        }
+
         private void Update()
         {
             refresh -= Time.deltaTime;
             if (refresh > 0f) return;
             refresh = 1f;
-            if (Fishing.Spot(Cell).count > 0) bubble.Show("icon_fish_carp", 0.26f);
+            if (Fishing.Spot(Cell).count > 0) bubble.Show("hud_fishing", 0.3f);
             else bubble.Hide();
         }
 
@@ -219,17 +351,19 @@ namespace Farm
             FishSpotData s = Fishing.Spot(Cell);
             if (s.count <= 0)
             {
-                UIManager.I.ShowTooltip(transform.position + Vector3.up, $"Cá đã hết\nCá mới sau {Defs.FormatTime(s.regenAt - GameManager.I.Now)}");
+                UIManager.I.ShowTooltip(transform.position + Vector3.up, L.F("Cá đã hết\nCá mới sau {0}", Defs.FormatTime(s.regenAt - GameManager.I.Now)));
                 return;
             }
             if (Pending) return;
             Pending = true;
+            Vector3 shore = ShorePoint();
             FarmerController.I.Enqueue(new FarmTask
             {
                 owner = this,
-                target = () => transform.position,
+                // stand on the nearest bank cell: spots in the middle of a pond have no walkable neighbour
+                target = () => shore,
                 pose = "water",
-                reach = 1.7f,
+                reach = 0.3f,
                 duration = 0.2f,
                 canDo = () => Fishing.Spot(Cell).count > 0,
                 doIt = () => UIManager.I.OpenFishing(Cell),
@@ -261,13 +395,13 @@ namespace Farm
             {
                 armedUntil = Time.time + 3f;
                 UIManager.I.ShowTooltip(transform.position + Vector3.up * 1.2f,
-                    $"Dọn {Def.name}: {Def.cost} xu\nChạm lần nữa để dọn");
+                    L.F("Dọn {0}: {1} xu\nChạm lần nữa để dọn", Def.name, Def.cost));
                 return;
             }
             armedUntil = 0;
             if (!GameManager.I.CanAfford(Def.cost))
             {
-                UIManager.I.Toast("Không đủ xu để dọn!");
+                UIManager.I.Toast(L.T("Không đủ xu để dọn!"));
                 return;
             }
             Pending = true;
@@ -276,7 +410,7 @@ namespace Farm
                 owner = this,
                 target = () => transform.position,
                 pose = "axe",
-                duration = 0.6f,
+                duration = 0.76f,
                 canDo = () => this != null && GameManager.I.CanAfford(Def.cost),
                 doIt = () =>
                 {
@@ -284,6 +418,15 @@ namespace Farm
                     GameManager.I.AddXp(Def.cost / 3 + 1);
                     UIManager.I.FloatText(transform.position + Vector3.up, "-" + Def.cost, "hud_coin");
                     GameEvents.Raise("clear", D.sprite);
+                    Fx.Dust(transform.position, 16);
+                    // B3.1: clearing land sometimes yields a building material
+                    if (Random.value < Defs.DebrisMaterialChance)
+                    {
+                        string mat = Defs.RandomMaterial();
+                        if (GameManager.I.AddItem(mat, 1))
+                            UIManager.I.FloatText(transform.position + Vector3.up * 1.6f, "+1", Defs.Item(mat).icon);
+                    }
+                    Haptics.Light();
                     WorldMap.I.RemoveDebris(this);
                 }
             });

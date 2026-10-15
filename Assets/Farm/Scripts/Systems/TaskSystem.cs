@@ -87,7 +87,7 @@ namespace Farm
                 int target = UnityEngine.Random.Range(t.min, t.max + 1);
                 D.tasks.Add(new TaskData
                 {
-                    stat = t.stat, text = string.Format(t.text, target), target = target,
+                    stat = t.stat, text = t.text, target = target,
                     coins = 30 + 6 * target + 4 * D.level, xp = 8 + 2 * D.level,
                 });
             }
@@ -113,6 +113,7 @@ namespace Farm
             if (!AllTasksClaimed || D.taskBonusClaimed) return false;
             D.taskBonusClaimed = true;
             GameManager.I.AddCoins(BonusCoins);
+            GameManager.I.AddGems(Defs.TaskBonusGems);
             GameManager.I.AddXp(20);
             RefreshBadge();
             return true;
@@ -138,6 +139,7 @@ namespace Farm
             if (e == null) D.achClaimed.Add(new StatEntry { key = a.key, value = 1 });
             else e.value++;
             GameManager.I.AddCoins(a.rewards[tier]);
+            GameManager.I.AddGems(Defs.AchievementGems(tier));
             GameManager.I.AddXp(10 * (tier + 1));
             RefreshBadge();
             return true;

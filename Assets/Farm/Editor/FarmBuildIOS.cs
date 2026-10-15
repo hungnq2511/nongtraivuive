@@ -19,29 +19,6 @@ namespace Farm.EditorTools
         public const string BundleId = "com.nutrica.nongtraivuive";
         private const string OutputDir = "Builds/iOS";
 
-        private static readonly string[,] AppIconFiles =
-        {
-            { "AppIcon-120.png", "Icon-iPhone-120.png" },
-            { "AppIcon-180.png", "Icon-iPhone-180.png" },
-            { "AppIcon-76.png", "Icon-iPad-76.png" },
-            { "AppIcon-152.png", "Icon-iPad-152.png" },
-            { "AppIcon-167.png", "Icon-iPad-167.png" },
-            { "AppIcon-1024.png", "Icon-AppStore-1024.png" },
-        };
-
-        private const string AppIconContentsJson = @"{
-  ""images"" : [
-    { ""filename"" : ""Icon-iPhone-120.png"", ""idiom"" : ""iphone"", ""scale"" : ""2x"", ""size"" : ""60x60"" },
-    { ""filename"" : ""Icon-iPhone-180.png"", ""idiom"" : ""iphone"", ""scale"" : ""3x"", ""size"" : ""60x60"" },
-    { ""filename"" : ""Icon-iPad-76.png"", ""idiom"" : ""ipad"", ""scale"" : ""1x"", ""size"" : ""76x76"" },
-    { ""filename"" : ""Icon-iPad-152.png"", ""idiom"" : ""ipad"", ""scale"" : ""2x"", ""size"" : ""76x76"" },
-    { ""filename"" : ""Icon-iPad-167.png"", ""idiom"" : ""ipad"", ""scale"" : ""2x"", ""size"" : ""83.5x83.5"" },
-    { ""filename"" : ""Icon-AppStore-1024.png"", ""idiom"" : ""ios-marketing"", ""scale"" : ""1x"", ""size"" : ""1024x1024"" }
-  ],
-  ""info"" : { ""author"" : ""xcode"", ""version"" : 1 },
-  ""properties"" : { ""pre-rendered"" : false }
-}";
-
         [MenuItem("Farm/Build iOS (Xcode project for TestFlight)", priority = 40)]
         public static void Build()
         {
@@ -105,33 +82,22 @@ namespace Farm.EditorTools
         public static void OnPostProcess(BuildTarget target, string path)
         {
             if (target != BuildTarget.iOS) return;
-
-            InstallAppIcons(path);
-
             string plistPath = Path.Combine(path, "Info.plist");
             var plist = new PlistDocument();
             plist.ReadFromFile(plistPath);
             plist.root.SetBoolean("ITSAppUsesNonExemptEncryption", false);
+            // Shown in the iOS tracking-permission dialog (Monetization.cs asks before starting rewarded ads)
+            plist.root.SetString("NSUserTrackingUsageDescription",
+                "Cho phép để quảng cáo phù hợp với bạn hơn. Bạn vẫn chơi đầy đủ nếu từ chối. / Allow this so ads are more relevant to you. The game works fully if you decline.");
             plist.WriteToFile(plistPath);
-        }
 
-        private static void InstallAppIcons(string buildPath)
-        {
-            string sourceDir = Path.Combine(Application.dataPath, "Farm/AppIcon");
-            string iconSetDir = Path.Combine(buildPath, "Unity-iPhone/Images.xcassets/AppIcon.appiconset");
-            Directory.CreateDirectory(iconSetDir);
-
-            for (int i = 0; i < AppIconFiles.GetLength(0); i++)
-            {
-                string source = Path.Combine(sourceDir, AppIconFiles[i, 0]);
-                if (!File.Exists(source))
-                    throw new BuildFailedException("Missing iOS app icon: " + source);
-
-                File.Copy(source, Path.Combine(iconSetDir, AppIconFiles[i, 1]), true);
-            }
-
-            File.WriteAllText(Path.Combine(iconSetDir, "Contents.json"), AppIconContentsJson);
-            Debug.Log("[Farm] Installed iOS app icons, including the 1024x1024 App Store icon.");
+            // Plugins/iOS/FarmNative.mm uses local notifications and App Tracking Transparency
+            string projPath = PBXProject.GetPBXProjectPath(path);
+            var proj = new PBXProject();
+            proj.ReadFromFile(projPath);
+            proj.AddFrameworkToProject(proj.GetUnityFrameworkTargetGuid(), "UserNotifications.framework", false);
+            proj.AddFrameworkToProject(proj.GetUnityFrameworkTargetGuid(), "AppTrackingTransparency.framework", true);
+            proj.WriteToFile(projPath);
         }
 #endif
     }

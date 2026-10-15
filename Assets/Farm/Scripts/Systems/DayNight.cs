@@ -112,7 +112,7 @@ namespace Farm
             if (Raining != wasRaining)
             {
                 wasRaining = Raining;
-                UIManager.I.Toast(Raining ? "Trời mưa! Cây vừa gieo được tưới tự động." : "Trời đã tạnh.");
+                UIManager.I.Toast(Raining ? L.T("Trời mưa! Cây vừa gieo được tưới tự động.") : L.T("Trời đã tạnh."));
             }
             if (Raining && WorldMap.I != null)
                 foreach (PlotView p in WorldMap.I.Plots)
@@ -120,7 +120,7 @@ namespace Farm
 
             int hh = Mathf.FloorToInt(Hour), mm = Mathf.FloorToInt((Hour - hh) * 60f) / 10 * 10;
             string icon = Raining ? "hud_rain" : NightFactor > 0.5f ? "hud_moon" : "hud_sun";
-            UIManager.I.SetClock($"{hh:00}:{mm:00}", icon, Raining ? "Mưa" : NightFactor > 0.5f ? "Đêm" : "Nắng");
+            UIManager.I.SetClock($"{hh:00}:{mm:00}", icon, Raining ? L.T("Mưa") : NightFactor > 0.5f ? L.T("Đêm") : L.T("Nắng"));
         }
     }
 }

@@ -135,11 +135,12 @@ namespace Farm
             switch (a)
             {
                 case "seedbar":
-                    UIManager.I.OpenSeedBar();
+                    UIManager.I.OpenSeedPicker(this);
                     break;
                 case "info":
-                    UIManager.I.ShowTooltip(transform.position + Vector3.up * 1.2f,
-                        $"{Crop.name}\nCòn {Defs.FormatTime(SecondsLeft)}");
+                    UIManager.I.ShowSpeedUp(transform.position + Vector3.up * 1.2f,
+                        L.F("{0}\nCòn {1}", Crop.name, Defs.FormatTime(SecondsLeft)), SecondsLeft,
+                        () => { if (D.state == PlotState.Growing && Crop != null) D.wateredAt = GameManager.I.Now - Crop.growSec; });
                     break;
                 default:
                     Queue(a, true);
@@ -167,13 +168,13 @@ namespace Farm
                 if (seed == null) return;
                 if (!GameManager.I.CanAfford(seed.seedCost))
                 {
-                    UIManager.I.Toast("Không đủ xu để mua hạt giống!");
+                    UIManager.I.Toast(L.T("Không đủ xu để mua hạt giống!"));
                     return;
                 }
             }
             if (action == "harvest" && !GameManager.I.HasSpace(Crop.yield))
             {
-                UIManager.I.Toast("Kho đầy! Hãy bán bớt hoặc nâng cấp kho.");
+                UIManager.I.Toast(L.T("Kho đầy! Mang hàng ra Chợ bán hoặc nâng cấp kho."));
                 return;
             }
 
@@ -185,6 +186,8 @@ namespace Farm
                 owner = this,
                 target = () => transform.position,
                 pose = pose,
+                // till = two hoe swings, plant = one quick swing
+                duration = action == "till" ? 0.72f : action == "plant" ? 0.36f : action == "water" ? 0.55f : 0.45f,
                 canDo = () => PrimaryAction() == action || (action == "plant" && D.state == PlotState.Tilled),
                 doIt = () => Do(action, plantSeed),
             });
@@ -198,6 +201,7 @@ namespace Farm
                 case "till":
                     D.state = PlotState.Tilled;
                     gm.AddXp(1);
+                    Fx.Dust(transform.position);
                     GameEvents.Raise("till");
                     break;
                 case "plant":
@@ -205,27 +209,43 @@ namespace Farm
                     if (seed == null) return;
                     if (!gm.TrySpend(seed.seedCost))
                     {
-                        UIManager.I.Toast("Không đủ xu để mua hạt giống!");
+                        UIManager.I.Toast(L.T("Không đủ xu để mua hạt giống!"));
                         return;
                     }
                     D.crop = seed.id;
                     D.state = PlotState.Planted;
                     UIManager.I.FloatText(transform.position + Vector3.up * 0.6f, "-" + seed.seedCost, "hud_coin");
+                    Fx.Dust(transform.position, 5);
                     GameEvents.Raise("plant", seed.id);
                     break;
                 case "water":
                     Water();
+                    Fx.Water(transform.position);
                     GameEvents.Raise("water");
                     break;
                 case "harvest":
                     CropDef c = Crop;
-                    if (!gm.AddItem(c.id, c.yield))
+                    // Golden harvest: a small chance of double yield with a sparkle (counted for the album)
+                    bool golden = Random.value < Defs.GoldenChance && gm.HasSpace(c.yield * 2);
+                    int amount = golden ? c.yield * 2 : c.yield;
+                    if (!gm.AddItem(c.id, amount))
                     {
-                        UIManager.I.Toast("Kho đầy! Hãy bán bớt hoặc nâng cấp kho.");
+                        UIManager.I.Toast(L.T("Kho đầy! Mang hàng ra Chợ bán hoặc nâng cấp kho."));
                         return;
                     }
-                    gm.AddXp(c.xp);
-                    UIManager.I.FloatText(transform.position + Vector3.up * 0.8f, "+" + c.yield, c.Icon);
+                    gm.AddXp(golden ? c.xp * 2 : c.xp);
+                    UIManager.I.FloatText(transform.position + Vector3.up * 0.8f, "+" + amount, c.Icon);
+                    Fx.Leaves(transform.position, Color.white);
+                    if (golden)
+                    {
+                        Fx.Golden(transform.position);
+                        gm.Data.AddStat("golden", 1);
+                        gm.Data.AddStat("golden_" + c.id, 1);
+                        UIManager.I.Toast(L.F("Vụ mùa vàng! {0} x2", c.name));
+                        Haptics.Success();
+                        GameEvents.Raise("golden", c.id);
+                    }
+                    else Haptics.Light();
                     harvestedSprite = c.Stage("harvested");
                     harvestedTimer = 0.6f;
                     D.state = PlotState.Tilled;

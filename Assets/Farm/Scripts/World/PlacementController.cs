@@ -33,6 +33,9 @@ namespace Farm
 
         public bool Valid => WorldMap.I.CanPlace(size, gx, gy, moving);
 
+        /// <summary>The decoration being moved, if any (the placement bar then offers store / sell).</summary>
+        public PlaceView MovingDecor => moving is PlaceView pv && pv.IsDecor ? pv : null;
+
         public void BeginNew(PlaceDef d, Action<int, int> confirm)
         {
             Cancel();
@@ -77,7 +80,7 @@ namespace Farm
             ghost.gameObject.SetActive(true);
             EnsureTiles(size * size);
             SetCell(x, y);
-            UIManager.I.ShowPlacementBar(true, moving == null ? def.name : "Di chuyển: " + def.name);
+            UIManager.I.ShowPlacementBar(true, moving == null ? L.T(def.name) : L.T("Di chuyển: ") + L.T(def.name));
             CameraController.I.FocusOn(ghost.transform.position);
         }
 
@@ -145,7 +148,7 @@ namespace Farm
             if (!Active) return;
             if (!Valid)
             {
-                UIManager.I.Toast("Không thể đặt ở đây!");
+                UIManager.I.Toast(L.T("Không thể đặt ở đây!"));
                 return;
             }
             if (moving != null)

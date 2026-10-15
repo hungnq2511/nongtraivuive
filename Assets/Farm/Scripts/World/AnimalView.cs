@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Farm
 {
-    /// <summary>Farm animal: wanders near its house, feed it a crop, collect its product later.</summary>
+    /// <summary>Farm animal: wanders inside the fenced yard of its enclosure, feed it a crop, collect its product later.</summary>
     public class AnimalView : Interactable
     {
         public AnimalData D;
@@ -91,14 +91,7 @@ namespace Farm
                 }
                 else
                 {
-                    Vector3 next = p + to.normalized * step;
-                    if (!WorldMap.I.Walkable(IsoGrid.ToCell(next)))
-                    {
-                        walking = false;
-                        idleTimer = 0.5f;
-                        return;
-                    }
-                    transform.position = next;
+                    transform.position = p + to.normalized * step;
                     if (Mathf.Abs(to.x) > 0.01f) faceLeft = to.x < 0f;
                     if (Mathf.Abs(to.y) > Mathf.Abs(to.x) * 0.2f) faceUp = to.y > 0f;
                 }
@@ -108,20 +101,20 @@ namespace Farm
             idleTimer -= dt;
             if (idleTimer > 0f) return;
             PlaceView house = House;
-            Vector3 center = house != null ? house.transform.position + new Vector3(0, -IsoGrid.HalfH * 2.2f, 0) : transform.position;
-            for (int i = 0; i < 8; i++)
-            {
-                Vector2 r = Random.insideUnitCircle * 2.2f;
-                Vector3 cand = center + new Vector3(r.x, r.y * 0.6f, 0);
-                Vector2Int c = IsoGrid.ToCell(cand);
-                if (WorldMap.I.Walkable(c) && WorldMap.I.PlotAt(c) == null)
-                {
-                    walkTarget = cand;
-                    walking = true;
-                    return;
-                }
-            }
-            idleTimer = 1f;
+            if (house == null) { idleTimer = 2f; return; }
+            // targets are always on the yard floor, and the yard is convex, so the straight walk stays inside the fence
+            walkTarget = house.RandomYardPoint();
+            walking = true;
+        }
+
+        /// <summary>Put the animal back on its yard floor (spawn, or after the enclosure was moved).</summary>
+        public void Relocate()
+        {
+            PlaceView house = House;
+            if (house == null) return;
+            transform.position = house.RandomYardPoint();
+            walking = false;
+            idleTimer = Random.Range(0.5f, 3f);
         }
 
         public override int HitOrder => base.HitOrder + 500; // animals take priority over what's behind
@@ -131,10 +124,11 @@ namespace Farm
             string a = Action();
             if (a == "collect" || a == "feed") Queue(a);
             else if (D.state == AnimalState.Hungry)
-                UIManager.I.Toast($"Cần {Defs.Crop(Def.feed).name} để cho {Def.name} ăn. Hãy trồng thêm nhé!");
+                UIManager.I.Toast(L.F("Cần {0} để cho {1} ăn. Hãy trồng thêm nhé!", Defs.Crop(Def.feed).name, Def.name));
             else
-                UIManager.I.ShowTooltip(transform.position + Vector3.up * 1.4f,
-                    $"{Def.name} đang tạo {Defs.Item(Def.product).name}\nCòn {Defs.FormatTime(SecondsLeft)}");
+                UIManager.I.ShowSpeedUp(transform.position + Vector3.up * 1.4f,
+                    L.F("{0} đang tạo {1}\nCòn {2}", Def.name, Defs.Item(Def.product).name, Defs.FormatTime(SecondsLeft)), SecondsLeft,
+                    () => { if (D.state == AnimalState.Producing) { D.fedAt = GameManager.I.Now - Def.produceSec; refreshTimer = 0; } });
             Punch();
         }
 
@@ -157,14 +151,15 @@ namespace Farm
             if (Pending) return;
             if (action == "collect" && !GameManager.I.HasSpace(1))
             {
-                UIManager.I.Toast("Kho đầy! Hãy bán bớt hoặc nâng cấp kho.");
+                UIManager.I.Toast(L.T("Kho đầy! Mang hàng ra Chợ bán hoặc nâng cấp kho."));
                 return;
             }
             Pending = true;
             FarmerController.I.Enqueue(new FarmTask
             {
                 owner = this,
-                target = () => transform.position,
+                // the farmer works from outside the gate; animals stay inside the fence
+                target = () => House != null ? House.GatePoint : transform.position,
                 pose = "harvest_happy",
                 canDo = () => Action() == action,
                 doIt = () => Do(action),
@@ -183,21 +178,27 @@ namespace Farm
                 pose = "eat";
                 poseTimer = 1.6f;
                 UIManager.I.FloatText(transform.position + Vector3.up, "-1", Defs.Crop(Def.feed).Icon);
+                Fx.Burst(transform.position + Vector3.up * 0.4f, new Color(1f, 0.55f, 0.65f), 5, ProcSprites.Circle, 0.8f, 1.6f, 0.5f, 0.12f, 0.9f);
                 GameEvents.Raise("feed", Def.id);
             }
             else if (action == "collect")
             {
                 ItemDef prod = Defs.Item(Def.product);
-                if (!gm.AddItem(prod.id, 1))
+                // the cat (B2.2) sometimes brings a bonus product
+                int amount = PetSystem.Has("cat") && Random.value < Defs.CatDoubleChance && gm.HasSpace(2) ? 2 : 1;
+                if (!gm.AddItem(prod.id, amount))
                 {
-                    UIManager.I.Toast("Kho đầy! Hãy bán bớt hoặc nâng cấp kho.");
+                    UIManager.I.Toast(L.T("Kho đầy! Mang hàng ra Chợ bán hoặc nâng cấp kho."));
                     return;
                 }
                 gm.AddXp(prod.xp);
                 D.state = AnimalState.Hungry;
                 pose = "happy";
                 poseTimer = 1.2f;
-                UIManager.I.FloatText(transform.position + Vector3.up, "+1", prod.icon);
+                UIManager.I.FloatText(transform.position + Vector3.up, "+" + amount, prod.icon);
+                Fx.Sparkle(transform.position, new Color(1f, 0.97f, 0.8f), 8);
+                if (amount > 1) UIManager.I.Toast(L.F("Mèo Mướp mang thêm 1 {0}!", prod.name));
+                Haptics.Light();
                 GameEvents.Raise("collect", prod.id);
             }
             refreshTimer = 0;

@@ -185,8 +185,8 @@ namespace Farm
             if (BuildMode)
             {
                 if (hit != null && hit.Movable) PlacementController.I.BeginMove(hit);
-                else if (hit is PlotView) UIManager.I.Toast("Chỉ di chuyển được ô đất trống.");
-                else UIManager.I.Toast("Chạm vào công trình hoặc ô đất trống để di chuyển.");
+                else if (hit is PlotView) UIManager.I.Toast(L.T("Chỉ di chuyển được ô đất trống."));
+                else UIManager.I.Toast(L.T("Chạm vào công trình hoặc ô đất trống để di chuyển."));
                 return;
             }
             if (hit != null)

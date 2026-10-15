@@ -81,7 +81,7 @@ namespace Farm
             RectTransform rt = Rect("Text", parent);
             var t = rt.gameObject.AddComponent<Text>();
             t.font = Font;
-            t.text = text;
+            t.text = L.T(text);
             t.fontSize = size;
             t.color = color;
             t.alignment = align;

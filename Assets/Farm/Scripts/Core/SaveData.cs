@@ -96,6 +96,15 @@ namespace Farm
         public double readyAt;
     }
 
+    /// <summary>One stall slot at the farmers' market. item == null → empty.</summary>
+    [Serializable]
+    public class MarketSlotData
+    {
+        public string item;
+        public int qty, price;
+        public double soldAt;
+    }
+
     [Serializable]
     public class FishSpotData
     {
@@ -118,6 +127,15 @@ namespace Farm
         public int value;
     }
 
+    /// <summary>A visitor waiting on the road with a request (B2.1).</summary>
+    [Serializable]
+    public class VisitorData
+    {
+        public string npc;
+        public int spot, coins, xp, gems;
+        public List<ItemStack> req = new List<ItemStack>();
+    }
+
     [Serializable]
     public class SaveData
     {
@@ -126,6 +144,10 @@ namespace Farm
         public bool initialized;
         public int nextUid = 1;
         public int coins = Defs.StartCoins;
+        public int gems = Defs.StartGems;
+        public bool haptics = true;
+        public bool notifications = true;
+        public bool notifAsked;
         public int level = 1;
         public int xp;
         public int storageLevel;
@@ -156,6 +178,22 @@ namespace Farm
         public bool taskBonusClaimed;
         public List<StatEntry> stats = new List<StatEntry>();
         public List<StatEntry> achClaimed = new List<StatEntry>();
+        public List<MarketSlotData> market = new List<MarketSlotData>();
+        public int marketSlots = Defs.MarketBaseSlots;
+        public long marketHotDay = -1;
+        public List<string> marketHot = new List<string>();
+        public List<VisitorData> visitors = new List<VisitorData>();
+        public double nextVisitorAt;
+        public List<string> pets = new List<string>();
+        public int homeLevel = 1;
+        /// <summary>Decorations put away in storage (def id → count); placing them again is free.</summary>
+        public List<ItemStack> decorStore = new List<ItemStack>();
+        /// <summary>One-time (non-consumable) store products already granted.</summary>
+        public List<string> iapOwned = new List<string>();
+        /// <summary>Transaction IDs already granted (stops double rewards if the store re-delivers).</summary>
+        public List<string> iapOrders = new List<string>();
+        public string adDay = "";
+        public List<StatEntry> adCounts = new List<StatEntry>();
 
         public int Stat(string key)
         {

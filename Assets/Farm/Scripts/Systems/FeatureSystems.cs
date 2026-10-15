@@ -74,9 +74,9 @@ namespace Farm
         public static string Start(MachineData m, RecipeDef r)
         {
             Tick(m);
-            if (D.level < r.unlock) return $"Mở khoá ở cấp {r.unlock}.";
-            if (m.jobs.Count >= m.slots) return "Hàng đợi đã đầy. Nâng cấp thêm chỗ hoặc chờ máy chạy xong.";
-            if (!HasInputs(r)) return "Không đủ nguyên liệu.";
+            if (D.level < r.unlock) return L.F("Mở khoá ở cấp {0}.", r.unlock);
+            if (m.jobs.Count >= m.slots) return L.T("Hàng đợi đã đầy. Nâng cấp thêm chỗ hoặc chờ máy chạy xong.");
+            if (!HasInputs(r)) return L.T("Không đủ nguyên liệu.");
             foreach (ItemStack s in r.inputs) GameManager.I.RemoveItem(s.id, s.count);
             double now = GameManager.I.Now;
             double start = m.jobs.Count > 0 ? System.Math.Max(now, m.jobs[m.jobs.Count - 1].end) : now;
@@ -94,16 +94,26 @@ namespace Farm
                 ItemDef item = Defs.Item(m.done[0]);
                 if (!GameManager.I.AddItem(item.id, 1))
                 {
-                    UIManager.I.Toast("Kho đầy! Hãy bán bớt hoặc nâng cấp kho.");
+                    UIManager.I.Toast(L.T("Kho đầy! Mang hàng ra Chợ bán hoặc nâng cấp kho."));
                     break;
                 }
                 GameManager.I.AddXp(item.xp);
                 UIManager.I.FloatText(worldPos + Vector3.up * (1f + n * 0.3f), "+1", item.icon);
+                if (n == 0) { Fx.Sparkle(worldPos + Vector3.up * 0.6f, new Color(1f, 0.95f, 0.75f), 12); Haptics.Light(); }
                 m.done.RemoveAt(0);
                 GameEvents.Raise("produce", item.id);
                 n++;
             }
             return n;
+        }
+
+        /// <summary>Gem speed-up: the running job finishes now and the rest of the queue moves up.</summary>
+        public static void FinishCurrent(MachineData m)
+        {
+            double left = CurrentJobLeft(m);
+            if (left <= 0) { Tick(m); return; }
+            foreach (JobData j in m.jobs) j.end -= left;
+            Tick(m);
         }
 
         public static double CurrentJobLeft(MachineData m)
@@ -153,10 +163,10 @@ namespace Farm
         {
             CrateData c = Current.crates[index];
             if (c.filled) return null;
-            if (GameManager.I.Count(c.item) < c.qty) return "Chưa đủ hàng cho thùng này.";
+            if (GameManager.I.Count(c.item) < c.qty) return L.T("Chưa đủ hàng cho thùng này.");
             GameManager.I.RemoveItem(c.item, c.qty);
             c.filled = true;
-            GameManager.I.AddCoins(c.coins);
+            GameManager.I.AddCoins(Defs.WithBonus(c.coins));
             GameManager.I.AddXp(2);
             return null;
         }
@@ -167,6 +177,7 @@ namespace Farm
         {
             DeliveryData dd = Current;
             GameManager.I.AddCoins(dd.bonusCoins);
+            GameManager.I.AddGems(Defs.TruckGems);
             GameManager.I.AddXp(dd.xp);
             dd.crates.Clear();
             dd.readyAt = GameManager.I.Now + Defs.DeliveryCooldownSec;
@@ -237,12 +248,28 @@ namespace Farm
             return s;
         }
 
+        public static bool Endless(PlaceView v) => Defs.Tree(v.Def.id).harvests < 0;
+
         public static bool IsReady(PlaceView v)
         {
             PlaceState s = State(v);
-            return s.count > 0 && GameManager.I.Now >= s.t;
+            return (Endless(v) || s.count > 0) && GameManager.I.Now >= s.t;
         }
 
-        public static bool IsDead(PlaceView v) => State(v).count <= 0;
+        public static bool IsDead(PlaceView v) => !Endless(v) && State(v).count <= 0;
+
+        /// <summary>Bees pollinate fruit trees near a beehive: +1 fruit per harvest.</summary>
+        public static bool Pollinated(PlaceView v)
+        {
+            if (v.Def.id == "beehive") return false;
+            foreach (PlaceView p in WorldMap.I.Places)
+            {
+                if (p.Def.id != "beehive") continue;
+                if (Mathf.Abs(p.D.gx - v.D.gx) <= Defs.BeehiveRadius && Mathf.Abs(p.D.gy - v.D.gy) <= Defs.BeehiveRadius) return true;
+            }
+            return false;
+        }
+
+        public static int Yield(PlaceView v) => Defs.Tree(v.Def.id).yield + (Pollinated(v) ? 1 : 0);
     }
 }

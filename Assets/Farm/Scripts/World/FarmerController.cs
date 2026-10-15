@@ -191,7 +191,7 @@ namespace Farm
                 BuildPath();
                 if (waypoints == null)
                 {
-                    UIManager.I.Toast("Không có đường đi tới đó!");
+                    UIManager.I.Toast(L.T("Không có đường đi tới đó!"));
                     if (current.owner != null) current.owner.Pending = false;
                     current = null;
                     return;
@@ -253,9 +253,83 @@ namespace Farm
             }
             actionPose = current.pose;
             actionTimer = current.duration;
+            actionDuration = current.duration;
+            impacts = 0;
             if (Mathf.Abs(target.x - transform.position.x) > 0.05f) faceLeft = target.x < transform.position.x;
             faceUp = false; // action poses only exist facing the camera
             waypoints = null;
+        }
+
+        private float actionDuration;
+        private int impacts;
+
+        /// <summary>
+        /// Procedural action animation on top of the single action frame:
+        /// hoe / axe = wind-up (tool raised, body leaning back) then a fast strike with squash, dust and a haptic tick;
+        /// water = gentle tilt; harvest = happy hop. If a dedicated "_up" frame exists (e.g. farmer_hoe_up_se) it is used
+        /// for the wind-up instead of tilting the strike frame.
+        /// </summary>
+        private string AnimateAction(out float rot, out float sx, out float sy, out float lift)
+        {
+            rot = 0f; sx = 1f; sy = 1f; lift = 0f;
+            string frame = "farmer_" + actionPose + "_se";
+            float el = actionDuration - actionTimer;
+            float sign = faceLeft ? -1f : 1f;
+            switch (actionPose)
+            {
+                case "hoe":
+                case "axe":
+                {
+                    bool hoe = actionPose == "hoe";
+                    const float swing = 0.36f;
+                    int idx = Mathf.FloorToInt(el / swing);
+                    float k = (el - idx * swing) / swing;
+                    string upFrame = "farmer_" + actionPose + "_up_se";
+                    bool hasUp = SpriteDB.Exists(upFrame);
+                    float back = hasUp ? -6f : (hoe ? -26f : -12f);   // lean-back angle at the top of the swing
+                    float strike = hoe ? 4f : 16f;                       // forward angle at impact
+                    if (k < 0.5f)
+                    {
+                        float u = Mathf.SmoothStep(0f, 1f, k / 0.5f);
+                        if (hasUp) frame = upFrame;
+                        rot = back * u;
+                        lift = (hasUp ? 0.02f : 0.07f) * u;
+                    }
+                    else
+                    {
+                        float d = (k - 0.5f) / 0.5f;
+                        float fast = Mathf.Min(1f, d * 5f);              // the strike itself is very quick
+                        rot = Mathf.Lerp(back, strike, fast);
+                        if (d > 0.5f) rot = Mathf.Lerp(strike, 0f, (d - 0.5f) / 0.5f);
+                        if (d > 0.18f && d < 0.55f)
+                        {
+                            float q = 1f - Mathf.Abs(d - 0.3f) / 0.25f;
+                            sx = 1f + 0.07f * q;
+                            sy = 1f - 0.07f * q;
+                        }
+                        if (d > 0.2f && idx >= impacts)
+                        {
+                            impacts = idx + 1;
+                            Vector3 tip = transform.position + new Vector3(sign * (hoe ? 0.55f : 0.65f), 0.05f, 0);
+                            Fx.Dust(tip, hoe ? 6 : 8);
+                            Haptics.Light();
+                        }
+                    }
+                    break;
+                }
+                case "water":
+                    rot = 5f + Mathf.Sin(el * 14f) * 3f;
+                    break;
+                case "harvest_happy":
+                {
+                    float k = Mathf.Clamp01(el / Mathf.Max(0.1f, actionDuration));
+                    lift = Mathf.Sin(k * Mathf.PI) * 0.12f;
+                    sy = 1f + Mathf.Sin(k * Mathf.PI) * 0.05f;
+                    sx = 1f - Mathf.Sin(k * Mathf.PI) * 0.03f;
+                    break;
+                }
+            }
+            return frame;
         }
 
         private void FinishAction()
@@ -290,26 +364,80 @@ namespace Farm
             if (Mathf.Abs(dir.y) > Mathf.Abs(dir.x) * 0.2f) faceUp = dir.y > 0f;
         }
 
+        // ------------------------------------------------------------------ walk cycle
+        // The atlas only has two stride poses (walk_a / walk_b) plus idle. A natural gait is built from them:
+        //   contact A → passing (legs together, body highest) → contact B → passing …
+        // The cycle advances with the DISTANCE walked (not time), so each foot plants where it lands instead of
+        // sliding; the body bobs down on each contact, rises while passing and leans a little into the motion.
+        private const float StepLength = 0.62f;   // world units per step (one foot plant)
+        private static readonly string[] Walk6Order = { "1", "3", "2", "4", "6", "5" };
+        // Front view has a dedicated left-leg contact frame ("L"): right step 1→3→2, left step L→L→2.
+        private static readonly string[] Walk6OrderLR = { "1", "3", "2", "L", "L", "2" };
+        // Matched pair of stride frames (right leg / left leg forward): alternate one per step.
+        private static readonly string[] Walk6OrderRL = { "R", "R", "R", "L", "L", "L" };
+        private float walkPhase;                   // in steps
+        private Vector3 lastAnimPos;
+
+        private string WalkFrame(string dir, out float rot, out float sx, out float sy, out float lift)
+        {
+            float dist = Vector3.Distance(transform.position, lastAnimPos);
+            walkPhase += Mathf.Min(dist, 0.5f) / StepLength;
+            // Dedicated 6-frame walk art (Characters/Farmer_Walk_6x2.png): contact → down → passing, twice per cycle.
+            if (SpriteDB.Exists("farmer_walk6_" + dir + "_1"))
+            {
+                int idx = Mathf.FloorToInt(walkPhase * 3f) % 6;
+                float inS = (walkPhase * 3f) % 3f / 3f;        // 0..1 inside one step
+                float b = Mathf.Sin(inS * Mathf.PI);
+                lift = 0.02f + b * 0.035f;
+                sx = 1f; sy = 1f + b * 0.015f;
+                rot = 2f;
+                var order = SpriteDB.Exists("farmer_walk6_" + dir + "_R") ? Walk6OrderRL
+                          : SpriteDB.Exists("farmer_walk6_" + dir + "_L") ? Walk6OrderLR : Walk6Order;
+                return "farmer_walk6_" + dir + "_" + order[idx];
+            }
+            float step = walkPhase % 2f;                  // 0..2 = one full cycle (two steps)
+            float inStep = step % 1f;                     // 0 = foot lands, 0.5 = passing, 1 = next foot lands
+            bool second = step >= 1f;
+            // contact pose around the landing, passing pose (idle frame = legs together) in the middle
+            string pose = inStep < 0.3f || inStep > 0.82f ? (second ? "walk_b_" : "walk_a_") : "idle_";
+            if (inStep > 0.82f) pose = second ? "walk_a_" : "walk_b_";   // next foot reaching forward
+            // bob: lowest at contact, highest when passing
+            float bob = Mathf.Sin(inStep * Mathf.PI);
+            lift = 0.035f + bob * 0.06f;
+            float impact = Mathf.Max(0f, 1f - inStep / 0.18f);           // quick squash right after landing
+            sx = 1f + impact * 0.035f;
+            sy = 1f - impact * 0.045f + bob * 0.02f;
+            // slight forward lean + side-to-side sway between steps
+            rot = 3.5f + (second ? 1f : -1f) * Mathf.Sin(inStep * Mathf.PI) * 1.5f;
+            return "farmer_" + pose + dir;
+        }
+
         private void Animate(float dt)
         {
             string frame;
             bool back = false;
-            if (actionTimer > 0f && actionPose != null) frame = "farmer_" + actionPose + "_se";
+            float rot = 0f, sx = 1f, sy = 1f, lift = 0f;
+            if (actionTimer > 0f && actionPose != null) frame = AnimateAction(out rot, out sx, out sy, out lift);
             else
             {
                 back = faceUp;
                 string dir = back ? "sw" : "se";
-                if (moving)
+                if (moving) frame = WalkFrame(dir, out rot, out sx, out sy, out lift);
+                else
                 {
-                    animTimer += dt;
-                    if (animTimer > 0.13f) { animTimer = 0f; frameB = !frameB; }
-                    frame = (frameB ? "farmer_walk_b_" : "farmer_walk_a_") + dir;
+                    walkPhase = 0f;
+                    frame = "farmer_idle_" + dir;
                 }
-                else frame = "farmer_idle_" + dir;
             }
+            lastAnimPos = transform.position;
             Sprite s = SpriteDB.Get(frame);
             if (s != null) sr.sprite = s;
             sr.flipX = back ? !faceLeft : faceLeft;
+            // rot > 0 leans toward the facing direction (clockwise when facing right)
+            Transform st = sr.transform;
+            st.localRotation = Quaternion.Euler(0, 0, -rot * (faceLeft ? -1f : 1f));
+            st.localScale = new Vector3(0.8f * sx, 0.8f * sy, 1f);
+            st.localPosition = new Vector3(0, lift, 0);
         }
     }
 }

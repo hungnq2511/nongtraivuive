@@ -45,7 +45,9 @@
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0",
     "com.unity.pipeline": "0.8.0-exp.1",
+    "com.unity.purchasing": "5.4.4",
     "com.unity.render-pipelines.universal": "17.6.0",
+    "com.unity.services.levelplay": "9.5.1",
     "com.unity.ugui": "2.6.0"
   }
 }

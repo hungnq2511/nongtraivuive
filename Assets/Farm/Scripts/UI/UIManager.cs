@@ -35,7 +35,7 @@ namespace Farm
         public bool ModalOpen => modals.Count > 0;
 
         // HUD
-        private Text levelText, xpText, coinText, storageText;
+        private Text levelText, xpText, coinText, gemText, storageText;
         private RectTransform xpFill;
         private Text questText, questReward;
         private GameObject questCard;
@@ -137,8 +137,9 @@ namespace Farm
             xpText.rectTransform.Stretch();
 
             // Coins & storage (top-center)
-            coinText = Pill(new Vector2(-180, -22), "hud_coin", () => OpenShop(null));
-            storageText = Pill(new Vector2(180, -22), "hud_inventory", () => OpenStorage(false));
+            coinText = Pill(new Vector2(-270, -22), "hud_coin", () => OpenShop(null), 280);
+            gemText = Pill(new Vector2(0, -22), "hud_gem", OpenGems, 210);
+            storageText = Pill(new Vector2(270, -22), "hud_inventory", () => OpenStorage(), 280);
 
             // Settings + daily (top-right)
             Button set = UIFactory.IconButton(hudRoot, "hud_settings", null, 100, OpenSettings);
@@ -151,7 +152,7 @@ namespace Farm
             questCard = q.gameObject;
             Image qi = UIFactory.Icon(q.transform, "hud_map", 96);
             qi.rectTransform.Place(new Vector2(0, 0.5f), new Vector2(0, 0.5f), new Vector2(10, 0), new Vector2(96, 96));
-            Text qt = UIFactory.Label(q.transform, "NHIỆM VỤ", 24, UIFactory.GreenDark, TextAnchor.UpperLeft, true);
+            Text qt = UIFactory.Label(q.transform, L.T("NHIỆM VỤ"), 24, UIFactory.GreenDark, TextAnchor.UpperLeft, true);
             qt.rectTransform.Place(new Vector2(0, 1), new Vector2(0, 1), new Vector2(116, -10), new Vector2(330, 30));
             questText = UIFactory.Label(q.transform, "", 26, UIFactory.TextDark, TextAnchor.UpperLeft);
             questText.rectTransform.Place(new Vector2(0, 1), new Vector2(0, 1), new Vector2(116, -40), new Vector2(334, 70));
@@ -162,11 +163,11 @@ namespace Farm
             RectTransform row = UIFactory.Rect("Actions", hudRoot);
             row.Place(new Vector2(1, 0), new Vector2(1, 0), new Vector2(-20, 52), new Vector2(760, 130));
             UIFactory.HRow(row, 22f).childAlignment = TextAnchor.LowerRight;
-            UIFactory.IconButton(row, "hud_build", "Xây dựng", 126, ToggleBuildMode);
-            UIFactory.IconButton(row, "hud_seed", "Hạt giống", 126, OpenSeedBar);
-            UIFactory.IconButton(row, "hud_inventory", "Kho", 126, () => OpenStorage(false));
-            UIFactory.IconButton(row, "hud_quest", "Đơn hàng", 126, OpenOrders);
-            UIFactory.IconButton(row, "hud_shop", "Cửa hàng", 126, () => OpenShop(null));
+            UIFactory.IconButton(row, "hud_build", L.T("Xây dựng"), 126, ToggleBuildMode);
+            UIFactory.IconButton(row, "hud_seed", L.T("Hạt giống"), 126, OpenSeedBar);
+            UIFactory.IconButton(row, "hud_inventory", L.T("Kho"), 126, () => OpenStorage());
+            UIFactory.IconButton(row, "hud_quest", L.T("Đơn hàng"), 126, OpenOrders);
+            UIFactory.IconButton(row, "hud_shop", L.T("Cửa hàng"), 126, () => OpenShop(null));
             bottomButtons = row.gameObject;
 
             Joystick.Create(hudRoot);
@@ -174,7 +175,7 @@ namespace Farm
             // Build mode banner
             Image bb = UIFactory.Panel(hudRoot, new Color(0.15f, 0.35f, 0.6f, 0.92f), "BuildBanner");
             bb.rectTransform.Place(new Vector2(0.5f, 1), new Vector2(0.5f, 1), new Vector2(0, -110), new Vector2(900, 80));
-            Text bt = UIFactory.Label(bb.transform, "CHẾ ĐỘ XÂY DỰNG – chạm công trình / ô đất trống để di chuyển", 26, Color.white, TextAnchor.MiddleLeft, true);
+            Text bt = UIFactory.Label(bb.transform, L.T("CHẾ ĐỘ XÂY DỰNG – chạm công trình / ô đất trống để di chuyển"), 26, Color.white, TextAnchor.MiddleLeft, true);
             bt.rectTransform.Stretch(20);
             bt.rectTransform.offsetMax = new Vector2(-170, -6);
             Button done = UIFactory.MakeButton(bb.transform, "Xong", UIFactory.Green, ToggleBuildMode, 28);
@@ -183,10 +184,10 @@ namespace Farm
             buildBanner.SetActive(false);
         }
 
-        private Text Pill(Vector2 pos, string icon, UnityEngine.Events.UnityAction onClick)
+        private Text Pill(Vector2 pos, string icon, UnityEngine.Events.UnityAction onClick, float width = 300)
         {
             Image p = UIFactory.Panel(hudRoot, new Color(0.2f, 0.12f, 0.05f, 0.75f), "Pill");
-            p.rectTransform.Place(new Vector2(0.5f, 1), new Vector2(0.5f, 1), pos, new Vector2(300, 72));
+            p.rectTransform.Place(new Vector2(0.5f, 1), new Vector2(0.5f, 1), pos, new Vector2(width, 72));
             p.gameObject.AddComponent<Button>().onClick.AddListener(onClick);
             Image i = UIFactory.Icon(p.transform, icon, 92);
             i.rectTransform.Place(new Vector2(0, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(10, 0), new Vector2(92, 92));
@@ -207,10 +208,36 @@ namespace Farm
             xpText.text = max ? "MAX" : $"{d.xp}/{need} XP";
             float pct = max ? 1f : Mathf.Clamp01((float)d.xp / need);
             xpFill.anchorMax = new Vector2(Mathf.Max(0.04f, pct), 1);
-            coinText.text = d.coins.ToString("N0");
+            // coins / gems count up or down smoothly (see TickCounters)
+            if (coinShown < 0) { coinShown = d.coins; coinText.text = d.coins.ToString("N0"); }
+            if (gemShown < 0) { gemShown = d.gems; gemText.text = d.gems.ToString("N0"); }
             int used = gm.StorageUsed, cap = gm.StorageCapacity;
             storageText.text = $"{used}/{cap}";
             storageText.color = used >= cap ? new Color(1f, 0.55f, 0.5f) : Color.white;
+        }
+
+        private float coinShown = -1, gemShown = -1;
+
+        private void TickCounters(float dt)
+        {
+            GameManager gm = GameManager.I;
+            if (gm == null || gm.Data == null || coinText == null || coinShown < 0 || gemShown < 0) return;
+            coinShown = Step(coinShown, gm.Data.coins, dt, coinText);
+            gemShown = Step(gemShown, gm.Data.gems, dt, gemText);
+        }
+
+        private static float Step(float shown, int target, float dt, Text label)
+        {
+            if (Mathf.Approximately(shown, target)) return shown;
+            float diff = target - shown;
+            float speed = Mathf.Max(20f, Mathf.Abs(diff) * 3f);
+            float next = Mathf.Abs(diff) <= speed * dt ? target : shown + Mathf.Sign(diff) * speed * dt;
+            label.text = Mathf.RoundToInt(next).ToString("N0");
+            // little pop while counting up
+            float k = next == target ? 1f : 1.12f;
+            label.transform.localScale = Vector3.one * Mathf.Lerp(label.transform.localScale.x, k, 0.4f);
+            if (next == target) label.transform.localScale = Vector3.one;
+            return next;
         }
 
         public void SetQuest(string text, string reward)
@@ -265,8 +292,9 @@ namespace Farm
         public void ShowTooltip(Vector3 world, string text)
         {
             tooltipWorld = world;
-            tooltipText.text = text;
+            tooltipText.text = L.T(text);
             tooltipTimer = 2.6f;
+            HideSpeedButton();
             tooltip.gameObject.SetActive(true);
             PositionAtWorld(tooltip, world);
         }
@@ -308,7 +336,7 @@ namespace Farm
             }
             else if (toastQueue.Count > 0)
             {
-                toastText.text = toastQueue.Dequeue();
+                toastText.text = L.T(toastQueue.Dequeue());
                 toastTimer = 2.2f;
                 toastGroup.alpha = 1f;
                 toastGroup.transform.SetAsLastSibling();
@@ -318,7 +346,8 @@ namespace Farm
             {
                 tooltipTimer -= dt;
                 PositionAtWorld(tooltip, tooltipWorld);
-                if (tooltipTimer <= 0f) tooltip.gameObject.SetActive(false);
+                if (tooltipTimer <= 0f) { tooltip.gameObject.SetActive(false); HideSpeedButton(); }
+                else TickSpeedButton(dt);
             }
 
             for (int i = floaters.Count - 1; i >= 0; i--)
@@ -335,7 +364,8 @@ namespace Farm
                 }
             }
 
-            if (seedBarOpen) RefreshSeedCards(false);
+            TickSeedPicker();
+            TickCounters(dt);
         }
 
         // ------------------------------------------------------------------ modal windows
@@ -372,7 +402,7 @@ namespace Farm
             content.offsetMin = new Vector2(20, 20);
 
             modals.Add(modal);
-            if (seedBarOpen) CloseSeedBar();
+            if (SeedBarOpen) CloseSeedBar();
             return content;
         }
 
