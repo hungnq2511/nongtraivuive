@@ -10,7 +10,7 @@ namespace Farm
         public bool givesDog;
         /// <summary>Price shown until the store returns the real localized price.</summary>
         public string fallbackPrice;
-        public string Id => BundlePrefix + key;
+        public string Id => Defs.BundlePrefix + key;
     }
 
     /// <summary>Monetization config: in-app purchase catalog and rewarded-ad settings.</summary>
