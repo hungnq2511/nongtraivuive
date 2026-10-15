@@ -32,9 +32,9 @@ namespace Farm
         // ---------------- rewarded ads (LevelPlay)
         // Fill these in from the LevelPlay dashboard (Apps → App Key, Ad units → Rewarded).
         // While they are empty the game simply hides every "watch an ad" button.
-        public const string LevelPlayAppKeyIOS = "";
+        public const string LevelPlayAppKeyIOS = "28bf7533d";
         public const string LevelPlayAppKeyAndroid = "";
-        public const string RewardedAdUnitIOS = "";
+        public const string RewardedAdUnitIOS = "24cz3pxmvctz1z2v";
         public const string RewardedAdUnitAndroid = "";
 
         public const int AdGems = 2;                    // gems for watching an ad in the gem shop

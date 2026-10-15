@@ -213,6 +213,14 @@ namespace Farm
                         });
                     }, 26);
                     ((RectTransform)watch.transform).Place(new Vector2(1, 0.5f), new Vector2(1, 0.5f), new Vector2(-14, 0), new Vector2(240, 72));
+                    // small ad-SDK status line; tapping the card 5 times opens LevelPlay's test suite
+                    Text status = Txt(adCard.transform, Monetization.AdStatus, 16, UIFactory.Wood, TextAnchor.LowerLeft,
+                        new Vector2(0, 0), new Vector2(0, 0), new Vector2(20, 2), new Vector2(620, 24));
+                    status.raycastTarget = false;
+                    Button secret = adCard.gameObject.AddComponent<Button>();
+                    secret.transition = Selectable.Transition.None;
+                    int taps = 0;
+                    secret.onClick.AddListener(() => { if (++taps >= 5) { taps = 0; if (m != null) m.OpenTestSuite(); } });
                 }
                 Button restore = UIFactory.MakeButton(bottom, L.T("Khôi phục giao dịch"), UIFactory.Blue, () => { if (m != null) m.Restore(); }, 24);
                 ((RectTransform)restore.transform).Place(new Vector2(1, 0), new Vector2(1, 0), new Vector2(-10, 112), new Vector2(330, 76));

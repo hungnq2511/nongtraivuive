@@ -68,6 +68,13 @@ int FarmATTStatus()
 
 void FarmATTRequest(FarmATTCallback callback)
 {
+    // iOS terminates the app if ATT is requested without NSUserTrackingUsageDescription in Info.plist.
+    if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSUserTrackingUsageDescription"] == nil)
+    {
+        NSLog(@"[Farm] NSUserTrackingUsageDescription missing - skipping tracking request");
+        if (callback) callback(2);
+        return;
+    }
     if (@available(iOS 14, *))
     {
         [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {

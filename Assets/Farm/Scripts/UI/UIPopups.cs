@@ -567,7 +567,7 @@ namespace Farm
             Button en = UIFactory.MakeButton(content, "English", L.En ? UIFactory.GreenDark : UIFactory.Gray, () => { if (!L.En) Bootstrap.SwitchLanguage(true); }, 28);
             ((RectTransform)en.transform).Place(new Vector2(0, 1), new Vector2(0, 1), new Vector2(400, -296), new Vector2(360, 76));
 
-            Txt(content, L.T("Nông Trại Vui Vẻ v") + Application.version + L.T("\nĐiều khiển: joystick / WASD để đi, chạm để làm việc,\nkéo qua nhiều ô để thao tác hàng loạt, 2 ngón để zoom."),
+            Txt(content, "Farm Bloom v" + Application.version + L.T("\nĐiều khiển: joystick / WASD để đi, chạm để làm việc,\nkéo qua nhiều ô để thao tác hàng loạt, 2 ngón để zoom."),
                 22, UIFactory.Wood, TextAnchor.LowerLeft, new Vector2(0, 0), new Vector2(0, 0), new Vector2(20, 10), new Vector2(780, 110));
         }
 

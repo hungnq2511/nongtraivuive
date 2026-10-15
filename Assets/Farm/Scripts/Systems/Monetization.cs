@@ -253,6 +253,20 @@ namespace Farm
             }
         }
 
+        /// <summary>Last ad SDK state, shown under the ad button in the gem shop (helps diagnose "no ads").</summary>
+        public static string AdStatus { get; private set; } = "";
+        private static void SetAdStatus(string s) { AdStatus = s; Debug.Log("[Farm] Ads: " + s); Notify(); }
+        private bool adsInitialized;
+
+        /// <summary>Opens LevelPlay's Integration Test Suite (hidden: tap the ad status line 5 times).</summary>
+        public void OpenTestSuite()
+        {
+#if FARM_ADS
+            if (adsInitialized) LevelPlay.LaunchTestSuite();
+            else UIManager.I.Toast("Ad SDK not initialized: " + AdStatus);
+#endif
+        }
+
         public bool AdReady
         {
             get
@@ -350,10 +364,13 @@ namespace Farm
 
         private IEnumerator StartAds()
         {
-            if (!AdsEnabled) yield break;
+            if (!AdsEnabled) { SetAdStatus("off (no keys / FARM_ADS)"); yield break; }
+            SetAdStatus("waiting");
             yield return new WaitForSecondsRealtime(1.5f);
             yield return RequestTracking(); // must finish before the ad SDK starts
 #if FARM_ADS
+            SetAdStatus("initializing");
+            LevelPlay.SetMetaData("is_test_suite", "enable");
             LevelPlay.OnInitSuccess += OnAdsInit;
             LevelPlay.OnInitFailed += OnAdsInitFailed;
             LevelPlay.Init(AppKey);
@@ -365,7 +382,8 @@ namespace Farm
 
         private void OnAdsInit(LevelPlayConfiguration config)
         {
-            Debug.Log("[Farm] LevelPlay SDK initialized successfully");
+            adsInitialized = true;
+            SetAdStatus("loading");
             rewarded = new LevelPlayRewardedAd(RewardedUnit);
             rewarded.OnAdLoaded += OnAdLoaded;
             rewarded.OnAdLoadFailed += OnAdLoadFailed;
@@ -378,7 +396,7 @@ namespace Farm
 
         private void OnAdsInitFailed(LevelPlayInitError error)
         {
-            Debug.LogWarning("[Farm] LevelPlay init failed: " + error.ErrorMessage);
+            SetAdStatus("init failed: " + error.ErrorCode + " " + error.ErrorMessage);
         }
 
         private void LoadAd()
@@ -386,11 +404,11 @@ namespace Farm
             if (rewarded != null) rewarded.LoadAd();
         }
 
-        private void OnAdLoaded(LevelPlayAdInfo info) => Notify();
+        private void OnAdLoaded(LevelPlayAdInfo info) => SetAdStatus("ready (" + info.AdNetwork + ")");
 
         private void OnAdLoadFailed(LevelPlayAdError error)
         {
-            Debug.LogWarning("[Farm] Rewarded ad failed to load: " + error.ErrorMessage);
+            SetAdStatus("no fill: " + error.ErrorCode + " " + error.ErrorMessage + " (retry 30s)");
             CancelInvoke(nameof(LoadAd));
             Invoke(nameof(LoadAd), 30f);
             Notify();

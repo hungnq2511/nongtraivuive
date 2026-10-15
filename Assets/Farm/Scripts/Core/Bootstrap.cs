@@ -74,7 +74,7 @@ namespace Farm
             {
                 d.lastDailyDate = DateTime.Now.ToString("yyyy-MM-dd");
                 d.dailyStreak = 1;
-                ui.Message(L.T("Chào mừng tới Nông Trại Vui Vẻ!"),
+                ui.Message(L.T("Chào mừng tới Farm Bloom!"),
                     L.T("• Dùng joystick (góc trái) để đi lại.\n") +
                     L.T("• Chạm vào ô đất, cây, vật nuôi để làm việc – nông dân sẽ tự đi tới.\n") +
                     L.T("• Kéo ngón tay qua nhiều ô để cuốc / gieo / tưới / thu hoạch hàng loạt.\n") +

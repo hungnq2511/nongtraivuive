@@ -9,11 +9,11 @@ PlayerSettings:
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
   defaultScreenOrientation: 4
-  targetDevice: 2
+  targetDevice: 0
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: "N\xF4ng Tr\u1EA1i Vui V\u1EBB"
+  productName: Farm Bloom
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -177,7 +177,7 @@ PlayerSettings:
   buildNumber:
     Standalone: 0
     VisionOS: 0
-    iPhone: 3
+    iPhone: 8
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
   AndroidBundleVersionCode: 1
@@ -836,8 +836,9 @@ PlayerSettings:
   webEnableSubmoduleStrippingCompatibility: 0
   webProgressiveAssetLoading: 0
   scriptingDefineSymbols:
-    Standalone: SENTIS_ANALYTICS_ENABLED;APP_UI_EDITOR_ONLY
-    iPhone: SENTIS_ANALYTICS_ENABLED;APP_UI_EDITOR_ONLY
+    Android: FARM_IAP;FARM_ADS
+    Standalone: SENTIS_ANALYTICS_ENABLED;APP_UI_EDITOR_ONLY;LEVELPLAY_DEPENDENCIES_INSTALLED;FARM_IAP;FARM_ADS
+    iPhone: SENTIS_ANALYTICS_ENABLED;APP_UI_EDITOR_ONLY;LEVELPLAY_DEPENDENCIES_INSTALLED;FARM_IAP;FARM_ADS
   additionalCompilerArguments: {}
   platformArchitecture:
     iPhone: 1
